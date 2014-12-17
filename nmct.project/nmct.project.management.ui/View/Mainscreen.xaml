@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="nmct.project.management.ui.View.Mainscreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource mainscreen_title}">Organisatie naam</TextBlock>
+        <Button Style="{StaticResource mainscreen_logout}" Command="{Binding DataContext.ChangePageCommand,  RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[0], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">Uitloggen</Button>
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource mainscreen_menu_button}" Command="{Binding DataContext.ChangePageCommand,  RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[2], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <StackPanel>
+                    <Image Source="/images/product.png" Style="{StaticResource mainscreen_menu_image}"/>
+                    <TextBlock Style="{StaticResource mainscreen_menu_textblock}">
+                        PRODUCTEN
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource mainscreen_menu_button}" Command="{Binding DataContext.ChangePageCommand,  RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[3], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <StackPanel>
+                    <Image Source="/images/user.png" Style="{StaticResource mainscreen_menu_image}"/>
+                    <TextBlock Style="{StaticResource mainscreen_menu_textblock}">
+                        MEDEWERKERS
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource mainscreen_menu_button}">
+                <StackPanel>
+                    <Image Source="/images/kassa.png" Style="{StaticResource mainscreen_menu_image}"/>
+                    <TextBlock Style="{StaticResource mainscreen_menu_textblock}">
+                        KASSA'S
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource mainscreen_menu_button}">
+                <StackPanel>
+                    <Image Source="/images/user.png" Style="{StaticResource mainscreen_menu_image}"/>
+                    <TextBlock Style="{StaticResource mainscreen_menu_textblock}">
+                        KLANTEN
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource mainscreen_menu_button}">
+                <StackPanel>
+                    <Image Source="/images/statistiek.png" Style="{StaticResource mainscreen_menu_image}"/>
+                    <TextBlock Style="{StaticResource mainscreen_menu_textblock}">
+                        STATISTIEKEN
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource mainscreen_menu_button}">
+                <StackPanel>
+                    <Image Source="/images/account.png" Style="{StaticResource mainscreen_menu_image}"/>
+                    <TextBlock Style="{StaticResource mainscreen_menu_textblock}">
+                        ACCOUNT
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>        
+    </Grid>
+</UserControl>
