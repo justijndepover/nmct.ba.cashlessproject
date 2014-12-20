@@ -52,5 +52,16 @@ namespace nmct.project.api.Models
                 Phone = record["Phone"].ToString()
             };
         }
+
+        public static Organisations GetOrganisation(int id, IEnumerable<Claim> claims)
+        {
+            string sql = "SELECT ID, Login, Password, DbName, DbLogin, DbPassword, OrganisationName, Address, Email, Phone FROM Organisations WHERE ID=@id";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@id", id);
+            DbDataReader reader = Database.GetData(Database.GetConnection(CreateConnectionString(claims)), sql);
+            reader.Read();
+            Organisations o = Create(reader);
+            reader.Close();
+            return o;
+        }
     }
 }

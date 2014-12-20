@@ -12,7 +12,7 @@ using System.Web;
 
 namespace nmct.project.api.Models
 {
-    public class KlantDA
+    public class ProductDA
     {
         private static ConnectionStringSettings CreateConnectionString(IEnumerable<Claim> claims)
         {
@@ -61,6 +61,14 @@ namespace nmct.project.api.Models
             DbParameter par2 = Database.AddParameter("ConnectionString", "@productname", p.ProductName);
             DbParameter par3 = Database.AddParameter("ConnectionString", "@price", p.Price);
             Database.ModifyData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3);
+        }
+
+        public static void SaveProduct(Products p, IEnumerable<Claim> claims)
+        {
+            string sql = "INSERT INTO Product (ProductName, Price) VALUES (@productname, @price)";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@productname", p.ProductName);
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@price", p.Price);
+            Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2);
         }
         #endregion
 

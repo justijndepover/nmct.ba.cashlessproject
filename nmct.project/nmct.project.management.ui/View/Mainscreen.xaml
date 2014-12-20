@@ -3,14 +3,18 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:vm="clr-namespace:nmct.project.management.ui.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1000">
+    <UserControl.DataContext>
+        <vm:MainscreenVM/>
+    </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource mainscreen_title}">Organisatie naam</TextBlock>
+        <TextBlock Style="{StaticResource mainscreen_title}"  Text="{Binding OrganisationName}"/>
         <Button Style="{StaticResource mainscreen_logout}" Command="{Binding DataContext.ChangePageCommand,  RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[0], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">Uitloggen</Button>
         <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid.RowDefinitions>

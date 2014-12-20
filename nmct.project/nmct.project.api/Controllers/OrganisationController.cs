@@ -17,5 +17,11 @@ namespace nmct.project.api.Controllers
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
             return AdminDA.GetOrganisations(p.Claims);
         }
+
+        public String OrganisationName(int id)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            return AdminDA.GetOrganisation(id, p.Claims).OrganisationName;
+        }
     }
 }

@@ -79,8 +79,7 @@ namespace nmct.project.management.ui.ViewModel
             else
             {
                 p.Edit = Visibility.Visible;
-            }
-           
+            }        
         }
 
         public ICommand UpdateCommand
@@ -88,12 +87,38 @@ namespace nmct.project.management.ui.ViewModel
             get { return new RelayCommand<Products>(UpdateProduct); }
         }
 
-        public async static void UpdateProduct(Products p)
+        public async void UpdateProduct(Products p)
         {
+            string input = JsonConvert.SerializeObject(p);
+
             using (HttpClient client = new HttpClient())
             {
-                //HttpResponseMessage response = await client.PutAsync("http://localhost:3655/api/product/", new HttpContent());
+                client.SetBearerToken(ApplicationVM.token.AccessToken);
+                HttpResponseMessage response = await client.PutAsync("http://localhost:3655/api/product", new StringContent(input, Encoding.UTF8, "application/json"));
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("error");
+                }
+                else
+                {
+                    EditProduct(p);
+                    GetProducts();
+                }
             }
+        }
+
+        public ICommand NewProductCommand
+        {
+            get { return new RelayCommand(NewProduct); }
+        }
+
+        public void NewProduct()
+        {
+            Products p = new Products();
+            p.ProductName = "Nieuw Product";
+            p.Price = 0;
+            p.Edit = Visibility.Visible;
+            AllProducts.Add(p);
         }
 
     }

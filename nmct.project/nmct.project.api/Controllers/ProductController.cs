@@ -15,14 +15,29 @@ namespace nmct.project.api.Controllers
         public List<Products> Get()
         {
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
-            return KlantDA.GetProducts(p.Claims);
+            return ProductDA.GetProducts(p.Claims);
         }
 
         public HttpStatusCode Delete(int Id)
         {
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
-            KlantDA.DeleteProduct(Id, p.Claims);
+            ProductDA.DeleteProduct(Id, p.Claims);
             return HttpStatusCode.OK;
+        }
+
+        public HttpResponseMessage Put(Products product)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            if (product.ID == 0)
+            {
+                ProductDA.SaveProduct(product, p.Claims);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                ProductDA.EditProduct(product, p.Claims);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
         }
     }
 }

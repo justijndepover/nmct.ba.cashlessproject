@@ -17,5 +17,27 @@ namespace nmct.project.api.Controllers
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
             return EmployeeDA.GetEmployees(p.Claims);
         }
+
+        public HttpStatusCode Delete(int Id)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            EmployeeDA.DeleteEmployee(Id, p.Claims);
+            return HttpStatusCode.OK;
+        }
+
+        public HttpResponseMessage Put(Employee e)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            if (e.ID == 0)
+            {
+                EmployeeDA.SaveEmployee(e, p.Claims);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                EmployeeDA.EditEmployee(e, p.Claims);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+        }
     }
 }

@@ -46,5 +46,33 @@ namespace nmct.project.api.Models
                 Phone = record["Phone"].ToString()
             };
         }
+        public static void DeleteEmployee(int id, IEnumerable<Claim> claims)
+        {
+            int rowsAffected = 0;
+            string sql = "DELETE FROM Employee WHERE ID=@ID";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@ID", id);
+            rowsAffected += Database.ModifyData(Database.GetConnection(CreateConnectionString(claims)), sql, par1);
+        }
+
+        public static void EditEmployee(Employee e, IEnumerable<Claim> claims)
+        {
+            string sql = "UPDATE Employee SET EmployeeName = @employeeName, Address = @address, Email = @email, Phone = @phone WHERE ID=@id";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@id", e.ID);
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@employeeName", e.EmployeeName);
+            DbParameter par3 = Database.AddParameter("ConnectionString", "@address", e.Address);
+            DbParameter par4 = Database.AddParameter("ConnectionString", "@email", e.Email);
+            DbParameter par5 = Database.AddParameter("ConnectionString", "@phone", e.Phone);
+            Database.ModifyData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4, par5);
+        }
+
+        public static void SaveEmployee(Employee e, IEnumerable<Claim> claims)
+        {
+            string sql = "INSERT INTO Employee (EmployeeName, Address, Email, Phone) VALUES (@employeeName, @address, @email, @phone)";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@employeeName", e.EmployeeName);
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@address", e.Address);
+            DbParameter par3 = Database.AddParameter("ConnectionString", "@email", e.Email);
+            DbParameter par4 = Database.AddParameter("ConnectionString", "@phone", e.Phone);
+            Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4);
+        }
     }
 }

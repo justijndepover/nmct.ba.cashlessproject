@@ -12,7 +12,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="550"/>
+            <RowDefinition Height="600"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -23,19 +23,13 @@
         
         <StackPanel Grid.Column="1" Grid.Row="1">
             <Rectangle Grid.Column="1" Grid.Row="1" Width="390" Height="390" Fill="#FFAD5C5C" />
-            <TextBlock Text="Naam vereniging" Style="{StaticResource textblock_Style}"/>
+            <TextBlock Text="Login" Style="{StaticResource textblock_Style}"/>
             <TextBox Text="{Binding Username}" Style="{StaticResource textbox_Style}"/>
             <TextBlock Text="Wachtwoord" Style="{StaticResource textblock_Style}"/>
             <TextBox Text="{Binding Password}" Style="{StaticResource textbox_Style}"/>
-            <Grid Margin="0 5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Content="AANMELDEN" Grid.Column="0" Style="{StaticResource button_Style}" Command="{Binding LoginCommand}"/>
-                <Button Content="REGISTREREN" Grid.Column="1" Style="{StaticResource button_Style}"/>
-            </Grid>
-    </StackPanel>
+            <Button Content="AANMELDEN" Style="{StaticResource button_Style}" Command="{Binding LoginCommand}"/>
+            <TextBlock Text="{Binding Error}" Style="{StaticResource ErrorMessage}"/>
+        </StackPanel>
     </Grid>
     
 </UserControl>
