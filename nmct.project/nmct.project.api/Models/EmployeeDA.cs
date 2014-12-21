@@ -1,4 +1,5 @@
 ﻿using nmct.project.api.Helper;
+using nmct.project.model;
 using nmct.project.model.dbKlant;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace nmct.project.api.Models
             string dbpass = claims.FirstOrDefault(c => c.Type == "dbpass").Value;
             string dbname = claims.FirstOrDefault(c => c.Type == "dbname").Value;
 
-            return Database.CreateConnectionString("System.Data.SqlClient", @"JUSTIJN\SQLEXPRESS", /*Cryptography.Decrypt(*/dbname, /*Cryptography.Decrypt(*/dblogin, /*Cryptography.Decrypt(*/dbpass);
+            return Database.CreateConnectionString("System.Data.SqlClient", @"JUSTIJN\SQLEXPRESS", Cryptography.Decrypt(dbname), Cryptography.Decrypt(dblogin), Cryptography.Decrypt(dbpass));
         }
 
         public static List<Employee> GetEmployees(IEnumerable<Claim> claims)

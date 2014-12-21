@@ -13,8 +13,8 @@ namespace nmct.project.api.Models
         public static Organisations CheckCredentials(string username, string password)
         {
             string sql = "SELECT * FROM Organisations WHERE Login=@Login AND Password=@Password";
-            DbParameter par1 = Database.AddParameter("ConnectionString", "@Login", /*Cryptography.Encrypt(*/username);
-            DbParameter par2 = Database.AddParameter("ConnectionString", "@Password", /*Cryptography.Encrypt(*/password);
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@Login", Cryptography.Encrypt(username));
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@Password", Cryptography.Encrypt(password));
             try
             {
                 DbDataReader reader = Database.GetData(Database.GetConnection("ConnectionString"), sql, par1, par2);

@@ -21,7 +21,7 @@ namespace nmct.project.api.Models
             string dbpass = claims.FirstOrDefault(c => c.Type == "dbpass").Value;
             string dbname = claims.FirstOrDefault(c => c.Type == "dbname").Value;
 
-            return Database.CreateConnectionString("System.Data.SqlClient", @"JUSTIJN\SQLEXPRESS", /*Cryptography.Decrypt(*/dbname, /*Cryptography.Decrypt(*/dblogin, /*Cryptography.Decrypt(*/dbpass);
+            return Database.CreateConnectionString("System.Data.SqlClient", @"JUSTIJN\SQLEXPRESS", Cryptography.Decrypt(dbname), Cryptography.Decrypt(dblogin), Cryptography.Decrypt(dbpass));
         }
 
         public static List<Organisations> GetOrganisations(IEnumerable<Claim> claims)

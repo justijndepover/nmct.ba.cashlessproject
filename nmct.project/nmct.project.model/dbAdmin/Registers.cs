@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,10 @@ namespace nmct.project.model
             get { return _device; }
             set { _device = value; }
         }
-
+        
         private DateTime _purchaseDate;
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime PurchaseDate
         {
             get { return _purchaseDate; }
@@ -39,6 +42,8 @@ namespace nmct.project.model
         }
 
         private DateTime _expiresDate;
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime ExpiresDate
         {
             get { return _expiresDate; }
