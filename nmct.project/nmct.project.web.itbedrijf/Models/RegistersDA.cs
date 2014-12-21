@@ -1,5 +1,6 @@
 ﻿using nmct.project.model;
 using nmct.project.web.itbedrijf.Helper;
+using nmct.project.web.itbedrijf.Presentation_Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,6 +24,49 @@ namespace nmct.project.web.itbedrijf.Models
             }
             reader.Close();
             return list;
+        }
+
+        public static List<RegisterPM> GetAllRegisters()
+        {
+            List<RegisterPM> list = new List<RegisterPM>();
+            string sql = "SELECT ID, RegisterName, Device, PurchaseDate, ExpiresDate, OrganisationID FROM Registers left join Organisation_Register on ID=RegisterID";
+            DbDataReader reader = Database.GetData(Database.GetConnection(CON), sql);
+            while (reader.Read())
+            {
+                list.Add(CreatePM(reader));
+            }
+            reader.Close();
+            return list;
+        }
+
+        public static RegisterPM CreatePM(IDataRecord record)
+        {
+            int organisationID;
+            Int32.TryParse(record["OrganisationID"].ToString(), out organisationID);
+
+            Registers r = new Registers()
+            {
+                ID = Int32.Parse(record["ID"].ToString()),
+                RegisterName = record["RegisterName"].ToString(),
+                Device = record["Device"].ToString(),
+                PurchaseDate = DateTime.Parse(record["PurchaseDate"].ToString()),
+                ExpiresDate = DateTime.Parse(record["ExpiresDate"].ToString())
+            };
+            Organisations o;
+            if (organisationID > 0)
+            {
+                o = OrganisationDA.GetOrganisation(organisationID);
+            }
+            else
+            {
+                o = null;
+            }
+            
+            return new RegisterPM()
+            {
+                Kassa = r,
+                Vereniging = o
+            };
         }
 
         public static Registers Create(IDataRecord record)

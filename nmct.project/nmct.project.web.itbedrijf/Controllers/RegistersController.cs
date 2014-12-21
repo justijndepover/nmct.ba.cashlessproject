@@ -1,5 +1,6 @@
 ﻿using nmct.project.model;
 using nmct.project.web.itbedrijf.Models;
+using nmct.project.web.itbedrijf.Presentation_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,10 @@ namespace nmct.project.web.itbedrijf.Controllers
 {
     public class RegistersController : Controller
     {
-        // GET: Register
+        [HttpGet]
         public ActionResult Index()
         {
-            List<Registers> list = RegistersDA.GetRegisters();
+            List<RegisterPM> list = RegistersDA.GetAllRegisters();
             return View(list);
         }
 
@@ -77,9 +78,21 @@ namespace nmct.project.web.itbedrijf.Controllers
             return View();
         }
 
-        public ActionResult RegisterToOrganisation()
+        [HttpGet]
+        public ActionResult EditOrganisation()
         {
-            return null;
+            List<RegisterPM> AllRegisters = RegistersDA.GetAllRegisters();
+            List<Organisations> AllOrganisations = OrganisationDA.GetOrganisations();
+            ViewBag.Registers = AllRegisters;
+            ViewBag.Organisations = AllOrganisations;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditOrganisation(int? s, int? s2)
+        {
+            return View();
         }
     }
 }

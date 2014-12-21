@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "EditOrganisation";
+}
+
+<h2>Wijzig de kassa van vereniging</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <p>Selecteer een kassa:</p>
+        <select name="kassa" class="form-control">
+            @foreach (var item in ViewBag.Registers)
+        {
+                <option value="@item.Kassa.ID">@item</option>
+        }
+        </select>
+
+        <br />
+        <p>Selecteer een vereniging</p>
+        <select name="Vereniging" class="form-control">
+            @foreach (var item in ViewBag.Organisations)
+        {
+                <option value="@item.ID">@item.OrganisationName</option>
+        }
+        </select>
+        <br/>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Opslaan" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

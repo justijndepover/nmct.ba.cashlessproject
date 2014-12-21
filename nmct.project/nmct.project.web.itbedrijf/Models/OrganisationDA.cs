@@ -49,7 +49,7 @@ namespace nmct.project.web.itbedrijf.Models
             DbParameter par3 = Database.AddParameter("ConnectionString", "@DbName", Cryptography.Encrypt(organisation.DbName));
             DbParameter par4 = Database.AddParameter("ConnectionString", "@DbLogin", Cryptography.Encrypt(organisation.DbLogin));
             DbParameter par5 = Database.AddParameter("ConnectionString", "@DbPassword", Cryptography.Encrypt(organisation.DbPassword));
-            DbParameter par6 = Database.AddParameter("ConnectionString", "@OrganisationName", organisation.Address);
+            DbParameter par6 = Database.AddParameter("ConnectionString", "@OrganisationName", organisation.OrganisationName);
             DbParameter par7 = Database.AddParameter("ConnectionString", "@Address", organisation.Address);
             DbParameter par8 = Database.AddParameter("ConnectionString", "@Email", organisation.Email);
             DbParameter par9 = Database.AddParameter("ConnectionString", "@Phone", organisation.Phone);

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<nmct.project.model.Registers>
+﻿@model IEnumerable<nmct.project.web.itbedrijf.Presentation_Models.RegisterPM>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>RegisterToOrganisation</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
@@ -12,39 +12,45 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.RegisterName)
+            @Html.DisplayNameFor(model => model.Kassa.RegisterName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Device)
+            @Html.DisplayNameFor(model => model.Kassa.Device)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PurchaseDate)
+            @Html.DisplayNameFor(model => model.Kassa.PurchaseDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ExpiresDate)
+            @Html.DisplayNameFor(model => model.Kassa.ExpiresDate)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vereniging.OrganisationName)
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegisterName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Device)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PurchaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExpiresDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.RegisterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.Device)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.PurchaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.ExpiresDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vereniging.OrganisationName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Kassa.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Kassa.ID })
+            </td>
+        </tr>
+    }
 
 </table>
