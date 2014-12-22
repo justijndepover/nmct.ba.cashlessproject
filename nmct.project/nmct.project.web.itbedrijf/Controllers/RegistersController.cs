@@ -14,7 +14,7 @@ namespace nmct.project.web.itbedrijf.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            List<RegisterPM> list = RegistersDA.GetAllRegisters();
+            List<RegisterPM> list = RegistersDA.GetRegisterPM();
             return View(list);
         }
 
@@ -81,7 +81,7 @@ namespace nmct.project.web.itbedrijf.Controllers
         [HttpGet]
         public ActionResult EditOrganisation()
         {
-            List<RegisterPM> AllRegisters = RegistersDA.GetAllRegisters();
+            List<RegisterPM> AllRegisters = RegistersDA.GetRegisterPM();
             List<Organisations> AllOrganisations = OrganisationDA.GetOrganisations();
             ViewBag.Registers = AllRegisters;
             ViewBag.Organisations = AllOrganisations;
@@ -90,9 +90,42 @@ namespace nmct.project.web.itbedrijf.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditOrganisation(int? s, int? s2)
+        public ActionResult EditOrganisation(int kassa, int vereniging)
         {
+            RegisterPM r = RegistersDA.GetRegisterPM(kassa);
+            int OldOrganisation;
+            if (r.Vereniging != null)
+            {
+                OldOrganisation = r.Vereniging.ID;
+            }
+            else
+            {
+                OldOrganisation = 0;
+            }
+            
+            int validUpdate = RegistersDA.InsertRegisterPM(kassa, vereniging);
+            int validUpdate2 = RegistersDA.UpdateOrganisationDatabase(kassa, vereniging, OldOrganisation);
+            if (validUpdate > 0 & validUpdate2 > 0)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Search(int? id)
+        {
+            if (id != null)
+            {
+                Organisations o = OrganisationDA.GetOrganisation(Convert.ToInt32(id));
+                ViewBag.Titel = "Kassas voor " + o.OrganisationName;
+                List<RegisterPM> list = RegistersDA.GetRegistersPM(o.ID);
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Organisations");
+            } 
         }
     }
 }

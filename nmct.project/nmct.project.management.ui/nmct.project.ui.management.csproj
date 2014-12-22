@@ -87,10 +87,14 @@
     </ApplicationDefinition>
     <Compile Include="Converter\EditConverter.cs" />
     <Compile Include="ViewModel\ApplicationVM.cs" />
+    <Compile Include="ViewModel\KassasVM.cs" />
     <Compile Include="ViewModel\MainscreenVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MedewerkersVM.cs" />
     <Compile Include="ViewModel\ProductenVM.cs" />
+    <Compile Include="View\Kassas.xaml.cs">
+      <DependentUpon>Kassas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Mainscreen.xaml.cs">
       <DependentUpon>Mainscreen.xaml</DependentUpon>
     </Compile>
@@ -103,6 +107,10 @@
     <Compile Include="View\Producten.xaml.cs">
       <DependentUpon>Producten.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Kassas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

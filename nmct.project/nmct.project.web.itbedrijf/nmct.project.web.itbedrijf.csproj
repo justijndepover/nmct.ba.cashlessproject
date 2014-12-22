@@ -308,6 +308,7 @@
     <Content Include="Views\Registers\Edit.cshtml" />
     <Content Include="Views\Registers\Index.cshtml" />
     <Content Include="Views\Registers\EditOrganisation.cshtml" />
+    <Content Include="Views\Registers\Search.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

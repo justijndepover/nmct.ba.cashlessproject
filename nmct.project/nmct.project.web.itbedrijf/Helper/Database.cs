@@ -109,7 +109,7 @@ namespace nmct.project.web.itbedrijf.Helper
 
                 command.Parameters.Clear();
                 command.CommandText = "SELECT @@IDENTITY";
-
+                Console.WriteLine("foutmelding: " + command.ExecuteScalar());
                 int identity = Convert.ToInt32(command.ExecuteScalar());
                 command.Connection.Close();
 

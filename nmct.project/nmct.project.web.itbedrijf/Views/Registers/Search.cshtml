@@ -1,0 +1,43 @@
+﻿@model IEnumerable<nmct.project.web.itbedrijf.Presentation_Models.RegisterPM>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>@ViewBag.Titel</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kassa.RegisterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kassa.Device)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kassa.PurchaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kassa.ExpiresDate)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.RegisterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.Device)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.PurchaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kassa.ExpiresDate)
+            </td>
+        </tr>
+    }
+
+</table>

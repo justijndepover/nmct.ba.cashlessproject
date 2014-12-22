@@ -43,7 +43,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cryptography.cs" />
     <Compile Include="dbAdmin\Errorlog.cs" />
     <Compile Include="dbAdmin\Organisations.cs" />
     <Compile Include="dbKlant\Customer.cs" />

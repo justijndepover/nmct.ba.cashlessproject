@@ -17,6 +17,7 @@ namespace nmct.project.management.ui.ViewModel
             Pages.Add(new MainscreenVM());
             Pages.Add(new ProductenVM());
             Pages.Add(new MedewerkersVM());
+            Pages.Add(new KassasVM());
             // Add other pages
 
             CurrentPage = Pages[0];

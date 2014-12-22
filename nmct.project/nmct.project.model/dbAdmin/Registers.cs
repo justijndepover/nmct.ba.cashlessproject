@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace nmct.project.model
         }
 
         private string _registerName;
+        [Required]
+        [DisplayName("Kassanaam")]
         public string RegisterName
         {
             get { return _registerName; }
@@ -26,14 +29,18 @@ namespace nmct.project.model
         }
 
         private string _device;
+        [Required]
+        [DisplayName("Toestel")]
         public string Device
         {
             get { return _device; }
             set { _device = value; }
         }
+
         
         private DateTime _purchaseDate;
         [Required]
+        [DisplayName("Aankoopdatum")]
         [DataType(DataType.Date)]
         public DateTime PurchaseDate
         {
@@ -41,8 +48,10 @@ namespace nmct.project.model
             set { _purchaseDate = value; }
         }
 
+
         private DateTime _expiresDate;
         [Required]
+        [DisplayName("Vervaldatum")]
         [DataType(DataType.Date)]
         public DateTime ExpiresDate
         {

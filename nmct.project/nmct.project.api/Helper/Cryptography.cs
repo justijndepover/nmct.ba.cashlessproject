@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace nmct.project.model
+namespace nmct.project.api.Helper
 {
     public class Cryptography
     {

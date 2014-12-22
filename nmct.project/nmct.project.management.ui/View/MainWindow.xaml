@@ -20,6 +20,9 @@
         <DataTemplate DataType="{x:Type vm:MedewerkersVM}">
             <v:Medewerkers/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:KassasVM}">
+            <v:Kassas/>
+        </DataTemplate>
     </Window.Resources>
     <Grid Style="{StaticResource mainscreen_grid}">
         <!-- 
