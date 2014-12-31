@@ -52,5 +52,8 @@ namespace nmct.project.management.ui.ViewModel
         {
             CurrentPage = page;
         }
+
+        public static string CurrentUser { get; set; }
+        
     }
 }

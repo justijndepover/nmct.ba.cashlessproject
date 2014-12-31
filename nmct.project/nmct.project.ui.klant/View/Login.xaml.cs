@@ -18,9 +18,9 @@ namespace nmct.project.ui.klant.View
     /// <summary>
     /// Interaction logic for PageOne.xaml
     /// </summary>
-    public partial class PageOne : UserControl
+    public partial class Login : UserControl
     {
-        public PageOne()
+        public Login()
         {
             InitializeComponent();
         }

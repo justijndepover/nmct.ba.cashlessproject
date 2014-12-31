@@ -12,7 +12,7 @@ namespace nmct.project.ui.medewerker.ViewModel
     {
         public ApplicationVM()
         {
-            Pages.Add(new PageOneVM());
+            Pages.Add(new LoginVM());
             // Add other pages
 
             CurrentPage = Pages[0];

@@ -64,13 +64,13 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.csproj.App.config
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.csprojResolveAssemblyReference.cache
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\MainWindow.g.cs
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\PageOne.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\Login.g.cs
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\App.g.cs
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker_MarkupCompile.cache
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker_MarkupCompile.lref
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\MainWindow.baml
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\PageOne.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\Login.baml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.g.resources
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.Properties.Resources.resources
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.csproj.GenerateResource.Cache

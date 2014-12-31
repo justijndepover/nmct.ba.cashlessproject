@@ -3,8 +3,7 @@ C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.proj
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.model\bin\Debug\nmct.project.model.pdb
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.model\obj\Debug\nmct.project.model.dll
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.model\obj\Debug\nmct.project.model.pdb
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.model\obj\Debug\nmct.project.model.csprojResolveAssemblyReference.cache
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.model\obj\Debug\nmct.project.model.dll
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.model\bin\Debug\nmct.project.model.dll
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.model\bin\Debug\nmct.project.model.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.model\obj\Debug\nmct.project.model.dll
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.model\obj\Debug\nmct.project.model.pdb

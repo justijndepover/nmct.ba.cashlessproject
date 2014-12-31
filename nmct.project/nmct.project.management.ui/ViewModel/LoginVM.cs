@@ -58,11 +58,13 @@ namespace nmct.project.management.ui.ViewModel
 
             if (!ApplicationVM.token.IsError)
             {
+                ApplicationVM.CurrentUser = Username;
                 appvm.ChangePage(new MainscreenVM());
             }
             else
             {
                 Error = "Gebruikersnaam of paswoord kloppen niet";
+                ApplicationVM.CurrentUser = "";
             }
         }
 

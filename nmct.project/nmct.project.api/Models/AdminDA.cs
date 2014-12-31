@@ -53,11 +53,11 @@ namespace nmct.project.api.Models
             };
         }
 
-        public static Organisations GetOrganisation(int id, IEnumerable<Claim> claims)
+        public static Organisations GetOrganisation(string username, IEnumerable<Claim> claims)
         {
-            string sql = "SELECT ID, Login, Password, DbName, DbLogin, DbPassword, OrganisationName, Address, Email, Phone FROM Organisations WHERE ID=@id";
-            DbParameter par1 = Database.AddParameter("ConnectionString", "@id", id);
-            DbDataReader reader = Database.GetData(Database.GetConnection(CreateConnectionString(claims)), sql);
+            string sql = "SELECT ID, Login, Password, DbName, DbLogin, DbPassword, OrganisationName, Address, Email, Phone FROM Organisations WHERE DbLogin=@username";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@username", Cryptography.Encrypt(username));
+            DbDataReader reader = Database.GetData(Database.GetConnection("ConnectionString"), sql,par1);
             reader.Read();
             Organisations o = Create(reader);
             reader.Close();

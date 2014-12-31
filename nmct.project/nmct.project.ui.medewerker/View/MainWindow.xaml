@@ -8,7 +8,7 @@
         <vm:ApplicationVM />
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:PageOneVM}">
+        <DataTemplate DataType="{x:Type vm:LoginVM}">
             <v:PageOne/>
         </DataTemplate>
     </Window.Resources>

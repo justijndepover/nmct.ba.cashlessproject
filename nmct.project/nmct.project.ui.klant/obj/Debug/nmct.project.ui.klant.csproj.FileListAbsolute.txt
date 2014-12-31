@@ -37,9 +37,21 @@ C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.proj
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.pdb
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.ui.klant\bin\Debug\nmct.project.model.dll
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.ui.klant\bin\Debug\nmct.project.model.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.csproj.App.config
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.csprojResolveAssemblyReference.cache
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\MainWindow.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Login.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\App.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant_MarkupCompile.cache
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant_MarkupCompile.lref
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Login.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.exe
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.pdb
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\nmct.project.ui.klant.exe.config
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\nmct.project.ui.klant.exe
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\nmct.project.ui.klant.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\beid35libCS.dll
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\GalaSoft.MvvmLight.dll
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\GalaSoft.MvvmLight.Extras.dll
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\GalaSoft.MvvmLight.Platform.dll
@@ -61,18 +73,8 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\System.Net.Http.Primitives.xml
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.csproj.App.config
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.csprojResolveAssemblyReference.cache
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\MainWindow.g.cs
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\PageOne.g.cs
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\App.g.cs
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant_MarkupCompile.cache
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant_MarkupCompile.lref
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\MainWindow.baml
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\PageOne.baml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.g.resources
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.Properties.Resources.resources
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.csproj.GenerateResource.Cache
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.exe
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\App.baml

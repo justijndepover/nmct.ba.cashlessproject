@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -12,8 +13,21 @@ namespace nmct.project.ui.klant.ViewModel
     {
         public ApplicationVM()
         {
-            Pages.Add(new PageOneVM());
-            // Add other pages
+
+        }
+
+        private async string GetOrganisation()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync("http://localhost:3655");
+
+            }
+        }
+        public ApplicationVM()
+        {
+            Pages.Add(new LoginVM());
+            Pages.Add(new RegistrerenVM());
 
             CurrentPage = Pages[0];
         }
@@ -45,5 +59,14 @@ namespace nmct.project.ui.klant.ViewModel
         {
             CurrentPage = page;
         }
+
+        private string _organisation;
+
+        public string Organisation
+        {
+            get { return _organisation; }
+            set { _organisation = value; }
+        }
+        
     }
 }

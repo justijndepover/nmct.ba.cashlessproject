@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
-        <vm:PageOneVM/>
+        <vm:LoginVM/>
     </UserControl.DataContext>
     <Grid>
         <TextBlock Text="{Binding Demo}"  />

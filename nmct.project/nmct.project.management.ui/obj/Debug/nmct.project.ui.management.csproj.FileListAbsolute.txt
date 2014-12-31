@@ -47,8 +47,6 @@ C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.proj
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.management.ui\bin\Debug\Thinktecture.IdentityModel.Client.dll
 C:\Users\Justijn\Documents\Visual Studio 2013\Projects\Eigen projecten\nmct.project\nmct.project.management.ui\bin\Debug\Thinktecture.IdentityModel.Client.pdb
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\bin\Debug\nmct.project.management.ui.exe.config
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.exe
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.pdb
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\bin\Debug\nmct.project.management.ui.exe
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\bin\Debug\nmct.project.management.ui.pdb
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\bin\Debug\GalaSoft.MvvmLight.dll
@@ -76,8 +74,7 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\bin\Debug\Thinktecture.IdentityModel.Client.pdb
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.ui.management.csproj.App.config
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.ui.management.csprojResolveAssemblyReference.cache
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Mainscreen.baml
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Medewerkers.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Kassas.g.cs
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\MainWindow.g.cs
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Mainscreen.g.cs
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Login.g.cs
@@ -88,11 +85,14 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui_MarkupCompile.cache
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui_MarkupCompile.lref
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\App.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Kassas.baml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\MainWindow.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Mainscreen.baml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Login.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Medewerkers.baml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Producten.baml
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.g.resources
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.Properties.Resources.resources
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.ui.management.csproj.GenerateResource.Cache
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Kassas.g.cs
-C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Kassas.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.exe
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.pdb

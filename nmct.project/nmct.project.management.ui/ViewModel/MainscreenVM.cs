@@ -16,7 +16,7 @@ namespace nmct.project.management.ui.ViewModel
         {
             if (ApplicationVM.token != null)
             {
-                OrganisationName = "KV Kortrijk";
+                GetOrganisationName();
             }
         }
 
@@ -24,7 +24,8 @@ namespace nmct.project.management.ui.ViewModel
         {
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync("http://localhost:3655/api/organisation/organisationname");
+                client.SetBearerToken(ApplicationVM.token.AccessToken);
+                HttpResponseMessage response = await client.GetAsync("http://localhost:3655/api/organisation/?username=" + ApplicationVM.CurrentUser);
                 if (response.IsSuccessStatusCode)
                 {
                     string json = await response.Content.ReadAsStringAsync();
@@ -38,6 +39,13 @@ namespace nmct.project.management.ui.ViewModel
             get { return "Mainscreen"; }
         }
 
-        public string OrganisationName { get; set; }
+        private string _organisationName;
+
+        public string OrganisationName
+        {
+            get { return _organisationName; }
+            set { _organisationName = value; OnPropertyChanged("OrganisationName"); }
+        }
+        
     }
 }
