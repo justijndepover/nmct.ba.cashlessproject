@@ -25,7 +25,7 @@ namespace nmct.project.ui.klant.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("KVKortrijk")]
+        [global::System.Configuration.DefaultSettingValueAttribute("RealMadrid")]
         public string DbName {
             get {
                 return ((string)(this["DbName"]));
@@ -37,7 +37,7 @@ namespace nmct.project.ui.klant.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("kvk")]
+        [global::System.Configuration.DefaultSettingValueAttribute("rm")]
         public string DbLogin {
             get {
                 return ((string)(this["DbLogin"]));

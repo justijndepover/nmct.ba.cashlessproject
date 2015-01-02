@@ -32,8 +32,8 @@ namespace nmct.project.model.dbKlant
             set { _address = value; }
         }
 
-        private BitmapImage _picture;
-        public BitmapImage Picture
+        private byte[] _picture;
+        public byte[] Picture
         {
             get { return _picture; }
             set { _picture = value; }
@@ -45,6 +45,15 @@ namespace nmct.project.model.dbKlant
             get { return _balance; }
             set { _balance = value; }
         }
+
+        private long _rijksregisterNummer;
+
+        public long RijksregisterNummer
+        {
+            get { return _rijksregisterNummer; }
+            set { _rijksregisterNummer = value; }
+        }
+
 
         #endregion
     }

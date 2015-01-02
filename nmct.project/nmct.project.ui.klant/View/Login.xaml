@@ -9,7 +9,7 @@
     <UserControl.DataContext>
         <vm:LoginVM/>
     </UserControl.DataContext>
-    <Grid Width="400" Height="100">
+    <Grid Width="400" Height="200">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -17,8 +17,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
         </Grid.RowDefinitions>
-        <Button Content="Aanmelden" Grid.Row="1" Style="{StaticResource button_Style}" />
-        <Button Content="Registreren" Grid.Column="1" Grid.Row="1" Style="{StaticResource button_Style}"/>
+        <Button Content="Aanmelden" Grid.Row="1" Style="{StaticResource button_Style}" Command="{Binding LoginCommand}"/>
+        <Button Content="Registreren" Grid.Column="1" Grid.Row="1" Style="{StaticResource button_Style}" Command="{Binding RegisterCommand}"/>
+        <TextBlock Text="{Binding Error}" Grid.ColumnSpan="2" Grid.Row="2"/>
     </Grid>
 </UserControl>

@@ -37,7 +37,8 @@ namespace nmct.project.api.Models
             return list;
         }
 
-        private static Organisations Create(IDataRecord record){
+        private static Organisations Create(IDataRecord record)
+        {
             return new Organisations()
             {
                 ID = Int32.Parse(record["ID"].ToString()),

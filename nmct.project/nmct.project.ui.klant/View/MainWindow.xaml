@@ -11,8 +11,14 @@
         <DataTemplate DataType="{x:Type vm:LoginVM}">
             <v:Login/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MainscreenVM}">
+            <v:Mainscreen/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RegistrerenVM}">
+            <v:Registreren/>
+        </DataTemplate>
     </Window.Resources>
-    <Grid Style="{StaticResource mainscreen_grid}">
+    <Grid Style="{StaticResource mainwindow_grid}">
         <!-- 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

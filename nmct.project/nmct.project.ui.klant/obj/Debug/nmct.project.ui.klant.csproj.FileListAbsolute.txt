@@ -78,3 +78,9 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.Properties.Resources.resources
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\nmct.project.ui.klant.csproj.GenerateResource.Cache
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\App.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Mainscreen.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Mainscreen.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\Thinktecture.IdentityModel.Client.dll
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\Thinktecture.IdentityModel.Client.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Registreren.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Registreren.baml

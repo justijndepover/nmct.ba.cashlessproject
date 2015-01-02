@@ -96,3 +96,5 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.ui.management.csproj.GenerateResource.Cache
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.exe
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\nmct.project.management.ui.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Klanten.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.management.ui\obj\Debug\View\Klanten.baml

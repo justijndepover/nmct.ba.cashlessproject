@@ -50,7 +50,7 @@
                     </TextBlock>
                 </StackPanel>
             </Button>
-            <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource mainscreen_menu_button}">
+            <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource mainscreen_menu_button}" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[5], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
                 <StackPanel>
                     <Image Source="/images/user.png" Style="{StaticResource mainscreen_menu_image}"/>
                     <TextBlock Style="{StaticResource mainscreen_menu_textblock}">
