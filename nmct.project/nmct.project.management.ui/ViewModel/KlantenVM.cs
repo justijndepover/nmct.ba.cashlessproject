@@ -37,7 +37,7 @@ namespace nmct.project.management.ui.ViewModel
             using (HttpClient client = new HttpClient())
             {
                 client.SetBearerToken(ApplicationVM.token.AccessToken);
-                HttpResponseMessage response = await client.GetAsync("http://localhost:3655/Customer");
+                HttpResponseMessage response = await client.GetAsync("http://localhost:3655/api/Customer");
                 if (response.IsSuccessStatusCode)
                 {
                     string json = await response.Content.ReadAsStringAsync();

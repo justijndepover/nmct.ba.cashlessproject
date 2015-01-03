@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:nmct.project.ui.medewerker.ViewModel"
         xmlns:v="clr-namespace:nmct.project.ui.medewerker.View"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Medewerker applicatie" WindowState="Maximized">
     <Window.DataContext>
         <vm:ApplicationVM />
     </Window.DataContext>
@@ -11,8 +11,14 @@
         <DataTemplate DataType="{x:Type vm:LoginVM}">
             <v:PageOne/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MainscreenVM}">
+            <v:Mainscreen/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TussenpaginaVM}">
+            <v:Tussenpagina/>
+        </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid Style="{StaticResource mainwindow_grid}">
         <!-- 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

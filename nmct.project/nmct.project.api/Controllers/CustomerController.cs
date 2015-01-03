@@ -15,13 +15,26 @@ namespace nmct.project.api.Controllers
         public Customer Get(string nummer)
         {
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
-            return CustomerDA.getCustomer(nummer, p.Claims);
+            return CustomerDA.GetCustomer(nummer, p.Claims);
+        }
+
+        public List<Customer> Get()
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            return CustomerDA.GetCustomers(p.Claims);
         }
 
         public HttpResponseMessage Put(Customer c)
         {
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
             CustomerDA.SaveCustomer(c, p.Claims);
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        public HttpResponseMessage LowerBalance(double balance, long rijksid)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            CustomerDA.LowerBalance(balance, rijksid, p.Claims);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }

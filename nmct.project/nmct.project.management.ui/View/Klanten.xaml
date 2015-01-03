@@ -20,7 +20,6 @@
                 <TextBlock Style="{StaticResource mainscreen_title}" Text="{Binding Name}"/>
             </StackPanel>
         </Button>
-        <Button Style="{StaticResource New_Style}" Content="Nieuw Product" Command="{Binding NewProductCommand}" />
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <ItemsControl ItemsSource="{Binding AllCustomers}" />

@@ -56,7 +56,7 @@ namespace nmct.project.api.Models
 
         public static Organisations GetOrganisation(string username, IEnumerable<Claim> claims)
         {
-            string sql = "SELECT ID, Login, Password, DbName, DbLogin, DbPassword, OrganisationName, Address, Email, Phone FROM Organisations WHERE DbLogin=@username";
+            string sql = "SELECT ID, Login, Password, DbName, DbLogin, DbPassword, OrganisationName, Address, Email, Phone FROM Organisations WHERE Login=@username";
             DbParameter par1 = Database.AddParameter("ConnectionString", "@username", Cryptography.Encrypt(username));
             DbDataReader reader = Database.GetData(Database.GetConnection("ConnectionString"), sql,par1);
             reader.Read();

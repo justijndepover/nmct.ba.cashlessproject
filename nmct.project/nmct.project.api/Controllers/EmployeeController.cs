@@ -39,5 +39,11 @@ namespace nmct.project.api.Controllers
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
         }
+
+        public Employee Get(string nummer)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            return EmployeeDA.GetEmployee(nummer, p.Claims);
+        }
     }
 }

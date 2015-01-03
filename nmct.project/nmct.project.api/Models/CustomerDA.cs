@@ -22,7 +22,7 @@ namespace nmct.project.api.Models
             return Database.CreateConnectionString("System.Data.SqlClient", @"JUSTIJN\SQLEXPRESS", Cryptography.Decrypt(dbname), Cryptography.Decrypt(dblogin), Cryptography.Decrypt(dbpass));
         }
 
-        public static Customer getCustomer(string rijksregisternummer, IEnumerable<Claim> claims)
+        public static Customer GetCustomer(string rijksregisternummer, IEnumerable<Claim> claims)
         {
             Customer c;
             string sql = "SELECT * FROM Customer WHERE rijksID = @rijksID";
@@ -66,7 +66,30 @@ namespace nmct.project.api.Models
             DbParameter par5 = Database.AddParameter("ConnectionString", "@RijksID", c.RijksregisterNummer);
 
             Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4, par5);
-
         }
+
+        public static List<Customer> GetCustomers(IEnumerable<Claim> claims)
+        {
+            List<Customer> list = new List<Customer>();
+            string sql = "SELECT * FROM Customer";
+            DbDataReader reader = Database.GetData(Database.GetConnection(CreateConnectionString(claims)), sql);
+            while (reader.Read())
+            {
+                list.Add(CreateCustomer(reader));
+            }
+            reader.Close();
+            return list;
+        }
+
+        public static int LowerBalance(double d, long rijksid, IEnumerable<Claim> claims)
+        {
+            int rowsAffected = 0;
+            string sql = "UPDATE Customer SET Balance=@balance WHERE rijksID=@rijksid";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@balance", d);
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@rijksid", rijksid);
+            rowsAffected = Database.ModifyData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2);
+            return rowsAffected;
+        }
+
     }
 }

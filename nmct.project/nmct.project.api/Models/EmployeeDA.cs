@@ -26,7 +26,7 @@ namespace nmct.project.api.Models
         public static List<Employee> GetEmployees(IEnumerable<Claim> claims)
         {
             List<Employee> list = new List<Employee>();
-            string sql = "SELECT ID, EmployeeName, Address, Email, Phone FROM Employee";
+            string sql = "SELECT ID, EmployeeName, Address, Email, Phone, RijksID FROM Employee";
             DbDataReader reader = Database.GetData(Database.GetConnection(CreateConnectionString(claims)), sql);
             while (reader.Read())
             {
@@ -44,7 +44,8 @@ namespace nmct.project.api.Models
                 EmployeeName = record["EmployeeName"].ToString(),
                 Address = record["Address"].ToString(),
                 Email = record["Email"].ToString(),
-                Phone = record["Phone"].ToString()
+                Phone = record["Phone"].ToString(),
+                RijksregisterNummer = long.Parse(record["RijksID"].ToString())
             };
         }
         public static void DeleteEmployee(int id, IEnumerable<Claim> claims)
@@ -57,23 +58,41 @@ namespace nmct.project.api.Models
 
         public static void EditEmployee(Employee e, IEnumerable<Claim> claims)
         {
-            string sql = "UPDATE Employee SET EmployeeName = @employeeName, Address = @address, Email = @email, Phone = @phone WHERE ID=@id";
+            string sql = "UPDATE Employee SET EmployeeName = @employeeName, Address = @address, Email = @email, Phone = @phone, RijksID=@rijksid WHERE ID=@id";
             DbParameter par1 = Database.AddParameter("ConnectionString", "@id", e.ID);
             DbParameter par2 = Database.AddParameter("ConnectionString", "@employeeName", e.EmployeeName);
             DbParameter par3 = Database.AddParameter("ConnectionString", "@address", e.Address);
             DbParameter par4 = Database.AddParameter("ConnectionString", "@email", e.Email);
             DbParameter par5 = Database.AddParameter("ConnectionString", "@phone", e.Phone);
-            Database.ModifyData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4, par5);
+            DbParameter par6 = Database.AddParameter("ConnectionString", "@rijksid", e.RijksregisterNummer);
+            Database.ModifyData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4, par5, par6);
         }
 
         public static void SaveEmployee(Employee e, IEnumerable<Claim> claims)
         {
-            string sql = "INSERT INTO Employee (EmployeeName, Address, Email, Phone) VALUES (@employeeName, @address, @email, @phone)";
+            string sql = "INSERT INTO Employee (EmployeeName, Address, Email, Phone, RijksID) VALUES (@employeeName, @address, @email, @phone, @rijksid)";
             DbParameter par1 = Database.AddParameter("ConnectionString", "@employeeName", e.EmployeeName);
             DbParameter par2 = Database.AddParameter("ConnectionString", "@address", e.Address);
             DbParameter par3 = Database.AddParameter("ConnectionString", "@email", e.Email);
             DbParameter par4 = Database.AddParameter("ConnectionString", "@phone", e.Phone);
-            Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4);
+            DbParameter par5 = Database.AddParameter("ConnectionString", "@rijksid", e.RijksregisterNummer);
+            Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4, par5);
+        }
+
+        public static Employee GetEmployee(string nummer, IEnumerable<Claim> claims)
+        {
+            Employee e = new Employee();
+            string sql = "SELECT * FROM Employee WHERE RijksID=@rijksid";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@rijksid", nummer);
+            DbDataReader reader = Database.GetData(Database.GetConnection(CreateConnectionString(claims)), sql, par1);
+            if (reader.HasRows == false)
+            {
+                return null;
+            }
+            reader.Read();
+            e = CreateEmployee(reader);
+            reader.Close();
+            return e;
         }
     }
 }

@@ -76,3 +76,11 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.csproj.GenerateResource.Cache
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.exe
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\nmct.project.ui.medewerker.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\App.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\bin\Debug\beid35libCS.dll
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\bin\Debug\Thinktecture.IdentityModel.Client.dll
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\bin\Debug\Thinktecture.IdentityModel.Client.pdb
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\Mainscreen.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\Mainscreen.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\Tussenpagina.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.medewerker\obj\Debug\View\Tussenpagina.baml

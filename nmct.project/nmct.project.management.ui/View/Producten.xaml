@@ -15,12 +15,12 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource title_button}" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[1], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Style="{StaticResource itemscreen_back_image}" Source="/images/terug.png" />
-                    <TextBlock Style="{StaticResource mainscreen_title}" Text="{Binding Name}"/>
-                </StackPanel>
-            </Button>
+        <Button Grid.Column="0" Style="{StaticResource title_button}" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[1], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+            <StackPanel Orientation="Horizontal">
+                <Image Style="{StaticResource itemscreen_back_image}" Source="/images/terug.png" />
+                <TextBlock Style="{StaticResource mainscreen_title}" Text="{Binding Name}"/>
+            </StackPanel>
+        </Button>
         <Button Style="{StaticResource New_Style}" Content="Nieuw Product" Command="{Binding NewProductCommand}" />
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">

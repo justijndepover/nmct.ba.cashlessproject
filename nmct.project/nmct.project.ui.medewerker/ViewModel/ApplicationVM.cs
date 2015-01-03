@@ -1,10 +1,12 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using nmct.project.model.dbKlant;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Thinktecture.IdentityModel.Client;
 
 namespace nmct.project.ui.medewerker.ViewModel
 {
@@ -12,7 +14,10 @@ namespace nmct.project.ui.medewerker.ViewModel
     {
         public ApplicationVM()
         {
+            Token = GetToken();
             Pages.Add(new LoginVM());
+            Pages.Add(new MainscreenVM());
+            Pages.Add(new TussenpaginaVM());
             // Add other pages
 
             CurrentPage = Pages[0];
@@ -41,9 +46,34 @@ namespace nmct.project.ui.medewerker.ViewModel
             get { return new RelayCommand<IPage>(ChangePage); }
         }
 
-        private void ChangePage(IPage page)
+        public void ChangePage(IPage page)
         {
             CurrentPage = page;
         }
+
+        public static TokenResponse Token { get; set; }
+
+        public TokenResponse GetToken()
+        {
+            OAuth2Client client = new OAuth2Client(new Uri("http://localhost:3655/token"));
+            return client.RequestResourceOwnerPasswordAsync(Properties.Settings.Default.DbLogin, Properties.Settings.Default.DbPassword).Result;
+        }
+
+        private static Employee _activeEmployee;
+
+        public static Employee ActiveEmployee
+        {
+            get { return _activeEmployee; }
+            set { _activeEmployee = value; }
+        }
+
+        private static Customer _activeCustomer;
+
+        public static Customer ActiveCustomer
+        {
+            get { return _activeCustomer; }
+            set { _activeCustomer = value; }
+        }
+          
     }
 }

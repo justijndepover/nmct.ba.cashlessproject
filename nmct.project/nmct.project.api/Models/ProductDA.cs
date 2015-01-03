@@ -28,7 +28,7 @@ namespace nmct.project.api.Models
         public static List<Products> GetProducts(IEnumerable<Claim> claims)
         {
             List<Products> list = new List<Products>();
-            string sql = "SELECT ID, ProductName, Price FROM Product";
+            string sql = "SELECT ID, ProductName, Price FROM Product WHERE Availability=1";
             DbDataReader reader = Database.GetData(Database.GetConnection(CreateConnectionString(claims)), sql);
             while (reader.Read())
             {
@@ -50,7 +50,7 @@ namespace nmct.project.api.Models
         public static void DeleteProduct(int id, IEnumerable<Claim> claims)
         {
             int rowsAffected = 0;
-            string sql = "DELETE FROM Product WHERE ID=@ID";
+            string sql = "UPDATE Product SET Availability=0 WHERE ID=@ID";
             DbParameter par1 = Database.AddParameter("ConnectionString", "@ID", id);
             rowsAffected += Database.ModifyData(Database.GetConnection(CreateConnectionString(claims)), sql, par1);
         }
@@ -66,7 +66,7 @@ namespace nmct.project.api.Models
 
         public static void SaveProduct(Products p, IEnumerable<Claim> claims)
         {
-            string sql = "INSERT INTO Product (ProductName, Price) VALUES (@productname, @price)";
+            string sql = "INSERT INTO Product (ProductName, Price, Availability) VALUES (@productname, @price, 1)";
             DbParameter par1 = Database.AddParameter("ConnectionString", "@productname", p.ProductName);
             DbParameter par2 = Database.AddParameter("ConnectionString", "@price", p.Price);
             Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2);

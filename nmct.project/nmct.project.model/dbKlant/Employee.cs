@@ -58,6 +58,15 @@ namespace nmct.project.model.dbKlant
             get { return _edit; }
             set { _edit = value; OnPropertyChanged("Edit"); }
         }
+
+        private long _rijksregisterNummer;
+
+        public long RijksregisterNummer
+        {
+            get { return _rijksregisterNummer; }
+            set { _rijksregisterNummer = value; }
+        }
+        
         
         #endregion
 
