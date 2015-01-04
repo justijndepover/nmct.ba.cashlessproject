@@ -10,7 +10,7 @@
         <SolidColorBrush x:Key="lichtgrijs" Color="#FFE4E4E4" />
         <SolidColorBrush x:Key="rood" Color="#FFFF3500" />
         <SolidColorBrush x:Key="background" Color="#FFF7F7F7" />
-        <SolidColorBrush x:Key="blauw" Color="#FF5387E7" />
+        <SolidColorBrush x:Key="blauw" Color="#FF5DA6E7" />
         
         <!--styles-->
         <!--mainwindow-->
@@ -29,6 +29,7 @@
         </Style>
 
         <Style x:Key="mainscreen_title" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
             <Setter Property="FontSize" Value="40" />
             <Setter Property="FontWeight" Value="Light" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -58,7 +59,14 @@
         </Style>
         
         <Style x:Key="customer_saldo_bold" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
             <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="Margin" Value="20 0 0 0" />
+        </Style>
+
+        <Style x:Key="customer_saldo_big" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="FontWeight" Value="Light" />
             <Setter Property="Margin" Value="20 0 0 0" />
         </Style>
 
@@ -67,13 +75,15 @@
         <Style x:Key="button_Style" TargetType="Button">
             <Setter Property="Margin" Value="5 10 5 10" />
             <Setter Property="Height" Value="25" />
+            <Setter Property="Padding" Value="10 0 10 0" />
             <Setter Property="FontWeight" Value="Light"/>
             <Setter Property="Background" Value="{StaticResource lichtgrijs}" />
             <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
         
         <Style x:Key="customer_image" TargetType="Image">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="center"/>
             <Setter Property="Margin" Value="10" />
         </Style>
         
@@ -85,6 +95,26 @@
         <Style x:Key="customer_info_text_bold" TargetType="TextBlock">
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Margin" Value="10" />
+        </Style>
+
+        <Style x:Key="login_titel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Light" />
+        </Style>
+
+        <Style x:Key="login_subtitel" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Light" />
+        </Style>
+
+        <Style x:Key="error_message" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="Foreground" Value="{StaticResource rood}" />
         </Style>
 
     </Application.Resources>

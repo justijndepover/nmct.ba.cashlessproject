@@ -9,7 +9,7 @@
     <UserControl.DataContext>
         <vm:RegistrerenVM/>
     </UserControl.DataContext>
-    <Grid>
+    <Grid Background="{StaticResource blauw}">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
@@ -22,19 +22,28 @@
             </StackPanel>
         </Button>
         
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="{StaticResource background}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="150" />
-                <RowDefinition Height="45" />
-                <RowDefinition Height="45" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
             
-            <Image Source="{Binding DataContext.ActiveUser.Picture, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Converter={StaticResource ImageConverter}}" Style="{StaticResource customer_image}"/>
-            <TextBlock Text="{Binding DataContext.ActiveUser.CustomerName, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Grid.Row="1" Style="{StaticResource customer_info_text}"/>
-            <TextBlock Text="{Binding DataContext.ActiveUser.Address, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Grid.Row="2" Style="{StaticResource customer_info_text}"/>
-            <Button Content="Registreren" Style="{StaticResource title_button}" Command="{Binding RegisterCommand}"  Grid.Row="4"/>
+            <Image Source="{Binding DataContext.TempUser.Picture, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Converter={StaticResource ImageConverter}}" Style="{StaticResource customer_image}"/>
+            <TextBlock Text="Naam" Style="{StaticResource customer_info_text_bold}" Grid.Row="1"/>
+            <TextBlock Text="{Binding DataContext.TempUser.CustomerName, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Grid.Row="2" Style="{StaticResource customer_info_text}"/>
+            <TextBlock Text="Adres" Style="{StaticResource customer_info_text_bold}" Grid.Row="3"/>
+            <TextBlock Text="{Binding DataContext.TempUser.Address, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Grid.Row="4" Style="{StaticResource customer_info_text}"/>
+            <Button Content="Registreren" Style="{StaticResource mainscreen_upload_button}" Command="{Binding RegisterCommand}"  Grid.Row="6"/>
+            <TextBlock Text="De gebruiker werd niet gevonden, wilt u registreren?" Style="{StaticResource customer_info_text}" Grid.Column="1" />
         </Grid>
         
     </Grid>

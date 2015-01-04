@@ -21,7 +21,7 @@ CREATE TABLE [dbo].[Customer](
 	[CustomerName] [nvarchar](MAX) NOT NULL,
 	[Address] [nvarchar](MAX) NOT NULL,
 	[Picture] [image] NULL,
-	[Balance] [numeric](18, 0) NOT NULL,
+	[Balance] [float] NOT NULL,
 	[RijksID] [bigint] NOT NULL,
  CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
 (
@@ -41,6 +41,7 @@ CREATE TABLE [dbo].[Employee](
 	[Address] [nvarchar](50) NOT NULL,
 	[Email] [nvarchar](50) NOT NULL,
 	[Phone] [nvarchar](50) NOT NULL,
+	[RijksID] [bigint] NOT NULL,
  CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
@@ -122,7 +123,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Sale](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Timestamp] [timestamp] NOT NULL,
+	[Timestamp] [datetime] NOT NULL,
 	[CustomerID] [int] NOT NULL,
 	[RegisterID] [int] NOT NULL,
 	[ProductID] [int] NOT NULL,

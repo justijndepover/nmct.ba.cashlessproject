@@ -37,7 +37,7 @@ namespace nmct.project.ui.klant.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("rm")]
+        [global::System.Configuration.DefaultSettingValueAttribute("kvk")]
         public string DbLogin {
             get {
                 return ((string)(this["DbLogin"]));

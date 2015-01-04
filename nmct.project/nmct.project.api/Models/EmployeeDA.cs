@@ -94,5 +94,16 @@ namespace nmct.project.api.Models
             reader.Close();
             return e;
         }
+
+        public static void LogEmployee(RegisterEmployee re, IEnumerable<Claim> claims)
+        {
+            string sql = "INSERT INTO Register_Employee VALUES (@registerid, @employeeid, @fromdate, @untildate)";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@registerid", re.RegisterID);
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@employeeid", re.EmployeeID);
+            DbParameter par3 = Database.AddParameter("ConnectionString", "@fromdate", re.From);
+            DbParameter par4 = Database.AddParameter("ConnectionString", "@untildate", re.Until);
+            Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4);
+        }
     }
+
 }

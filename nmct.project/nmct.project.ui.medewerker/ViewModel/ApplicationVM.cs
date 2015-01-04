@@ -23,6 +23,15 @@ namespace nmct.project.ui.medewerker.ViewModel
             CurrentPage = Pages[0];
         }
 
+        private static DateTime _from;
+
+        public static DateTime From
+        {
+            get { return _from; }
+            set { _from = value; }
+        }
+        
+
         private object currentPage;
         public object CurrentPage
         {

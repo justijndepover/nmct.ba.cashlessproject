@@ -40,5 +40,13 @@ namespace nmct.project.api.Models
             }
 
         }
+
+        public static void ChangePassword(string password, string username)
+        {
+            string sql = "UPDATE Organisations SET Password=@password WHERE Login=@login";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@password", password);
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@login", username);
+            Database.ModifyData(Database.GetConnection("ConnectionString"), sql, par1, par2);
+        }
     }
 }

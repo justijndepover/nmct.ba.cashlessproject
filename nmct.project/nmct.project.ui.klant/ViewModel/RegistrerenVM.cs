@@ -24,7 +24,7 @@ namespace nmct.project.ui.klant.ViewModel
 
         private async void Register()
         {
-            string input = JsonConvert.SerializeObject(ApplicationVM.ActiveUser);
+            string input = JsonConvert.SerializeObject(ApplicationVM.TempUser);
             using (HttpClient client = new HttpClient())
             {
                 client.SetBearerToken(ApplicationVM.Token.AccessToken);
@@ -35,8 +35,9 @@ namespace nmct.project.ui.klant.ViewModel
                 }
                 else
                 {
+                    ApplicationVM.ActiveUser = ApplicationVM.TempUser;
                     ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
-                    appvm.ChangePage(new LoginVM());
+                    appvm.ChangePage(new MainscreenVM());
                 }
             }
         }

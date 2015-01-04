@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using nmct.project.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace nmct.project.management.ui.ViewModel
             Pages.Add(new MedewerkersVM());
             Pages.Add(new KassasVM());
             Pages.Add(new KlantenVM());
+            Pages.Add(new SettingsVM());
             // Add other pages
 
             CurrentPage = Pages[0];
@@ -54,7 +56,13 @@ namespace nmct.project.management.ui.ViewModel
             CurrentPage = page;
         }
 
-        public static string CurrentUser { get; set; }
-        
+        private static Organisations _currentOrganisation;
+
+        public static Organisations CurrentOrganisation
+        {
+            get { return _currentOrganisation; }
+            set { _currentOrganisation = value; }
+        }
+              
     }
 }

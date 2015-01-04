@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="nmct.project.management.ui.View.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:nmct.project.management.ui.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <vm:SettingsVM/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Style="{StaticResource title_button}" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[1], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+            <StackPanel Orientation="Horizontal">
+                <Image Style="{StaticResource itemscreen_back_image}" Source="/images/terug.png" />
+                <TextBlock Style="{StaticResource mainscreen_title}" Text="{Binding Name}"/>
+            </StackPanel>
+        </Button>
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <TextBlock Text="Gebruikersnaam" Style="{StaticResource textblock_Style}"/>
+            <TextBox Grid.Row="1" Style="{StaticResource textbox_Style}" Text="{Binding Username, Mode=TwoWay}"/>
+            <TextBlock Text="Oud Wachtwoord" Grid.Row="2" Style="{StaticResource textblock_Style}"/>
+            <TextBox Grid.Row="3" Style="{StaticResource textbox_Style}" Text="{Binding OldPassword, Mode=TwoWay}"/>
+            <TextBlock Text="Nieuw Wachtwoord" Grid.Row="4" Style="{StaticResource textblock_Style}"/>
+            <TextBox Grid.Row="5" Style="{StaticResource textbox_Style}" Text="{Binding NewPassword, Mode=TwoWay}"/>
+            <Button Content="Sla wachtwoord op" Style="{StaticResource button_Style}" Grid.Row="6" Command="{Binding UpdatePasswordCommand}"/>
+            <TextBlock Text="{Binding Error}" Style="{StaticResource ErrorMessage}" />
+        </Grid>
+        
+
+    </Grid>
+</UserControl>

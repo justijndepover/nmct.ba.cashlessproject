@@ -15,7 +15,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
+        <Rectangle Fill="{StaticResource blauw}" />
         <Button Grid.Column="0" Style="{StaticResource title_button}" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[0], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <StackPanel Orientation="Horizontal">
                 <Image Style="{StaticResource itemscreen_back_image}" Source="/images/terug.png" />
@@ -42,7 +42,7 @@
             <TextBlock Text="{Binding DataContext.ActiveUser.CustomerName, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Grid.Row="2" Style="{StaticResource customer_info_text}"/>
             <TextBlock Text="Adres" Style="{StaticResource customer_info_text_bold}" Grid.Row="3"/>
             <TextBlock Text="{Binding DataContext.ActiveUser.Address ,RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Grid.Row="4" Grid.RowSpan="2" TextWrapping="Wrap" Style="{StaticResource customer_info_text}"/>
-            <Button Content="Kaart Opladen" Command="{Binding UploadCommand}" Style="{StaticResource mainscreen_upload_button}" Grid.Row="6" />
+            <Button Content="Kaart Opladen" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[3], RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Style="{StaticResource mainscreen_upload_button}" Grid.Row="6" />
             <Grid Grid.Column="1" Grid.RowSpan="7" Style="{StaticResource mainscreen_grid}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />

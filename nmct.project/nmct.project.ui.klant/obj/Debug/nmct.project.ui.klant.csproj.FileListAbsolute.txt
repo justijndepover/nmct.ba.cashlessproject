@@ -84,3 +84,5 @@ C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.proj
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\bin\Debug\Thinktecture.IdentityModel.Client.pdb
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Registreren.g.cs
 C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Registreren.baml
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Opladen.g.cs
+C:\Users\Justijn\Documents\GitHub\nmct.ba.cashlessproject\nmct.project\nmct.project.ui.klant\obj\Debug\View\Opladen.baml

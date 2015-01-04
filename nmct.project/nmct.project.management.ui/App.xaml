@@ -186,14 +186,16 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Image Source="/images/user.png" Grid.RowSpan="4" Margin="0 0 10 0"/>
+                    <Image Source="/images/user.png" Grid.RowSpan="5" Margin="0 0 10 0"/>
                     <TextBlock Grid.Column="1" Text="{Binding EmployeeName}" Style="{StaticResource item_textblock_fat}"/>
                     <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Email}" Style="{StaticResource item_textblock}"/>
-                    <Button Grid.Column="2" Grid.RowSpan="4" Content="Bewerk" Style="{StaticResource item_button}" Command="{Binding DataContext.EditCommand,  RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding}"/>
-                    <Button Grid.Column="3" Grid.RowSpan="4" Content="Verwijderen" Style="{StaticResource item_button}" Command="{Binding DataContext.DeleteCommand,  RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding ID}"/>
+                    <Button Grid.Column="2" Grid.RowSpan="5" Content="Bewerk" Style="{StaticResource item_button}" Command="{Binding DataContext.EditCommand,  RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding}"/>
+                    <Button Grid.Column="3" Grid.RowSpan="5" Content="Verwijderen" Style="{StaticResource item_button}" Command="{Binding DataContext.DeleteCommand,  RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding ID}"/>
                     <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Address}" Style="{StaticResource item_textblock}"/>
                     <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Phone}" Style="{StaticResource item_textblock}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding RijksregisterNummer}" Style="{StaticResource item_textblock}"/>
                 </Grid>
                 <Grid Margin="10" Visibility="{Binding Edit, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
                     <Grid.ColumnDefinitions>
@@ -207,14 +209,16 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Image Source="/images/user.png" Grid.RowSpan="4" Margin="0 0 10 0"/>
+                    <Image Source="/images/user.png" Grid.RowSpan="5" Margin="0 0 10 0"/>
                     <TextBox Grid.Column="1" Text="{Binding EmployeeName}" Style="{StaticResource item_textbox}"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Email}" Style="{StaticResource item_textbox}"/>
                     <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Address}" Style="{StaticResource item_textbox}"/>
                     <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Phone}" Style="{StaticResource item_textbox}"/>
-                    <Button Grid.Column="2" Grid.RowSpan="4" Content="Save" Style="{StaticResource item_button}" Command="{Binding DataContext.UpdateCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding}"/>
-                    <Button Grid.Column="3" Grid.RowSpan="4" Content="Annuleer" Style="{StaticResource item_button}" Command="{Binding DataContext.EditCommand,  RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding}"/>
+                    <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding RijksregisterNummer}" Style="{StaticResource item_textbox}"/>
+                    <Button Grid.Column="2" Grid.RowSpan="5" Content="Save" Style="{StaticResource item_button}" Command="{Binding DataContext.UpdateCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding}"/>
+                    <Button Grid.Column="3" Grid.RowSpan="5" Content="Annuleer" Style="{StaticResource item_button}" Command="{Binding DataContext.EditCommand,  RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding}"/>
                 </Grid>
             </Grid>    
         </DataTemplate>
@@ -226,23 +230,32 @@
                     <Setter Property="FontSize" Value="18" />
                     <Setter Property="FontWeight" Value="Light"/>
                 </Style>
+                <Style x:Key="button" TargetType="Button">
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="Background" Value="#00000000" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                </Style>
             </DataTemplate.Resources>
-            <Grid Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+
+            <Button Command="{Binding DataContext.RegisterDetailCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding ID}" Style="{StaticResource button}">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
                     <Image Source="/images/kassa.png" Grid.RowSpan="2" Margin="0 0 10 0"/>
                     <TextBlock Grid.Column="1" Text="{Binding RegisterName}" Style="{StaticResource item_textblock}"/>
                     <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Device}" Style="{StaticResource item_textblock}"/>
-            </Grid>
+                </Grid>
+            </Button>
         </DataTemplate>
+        
         <Style x:Key="title_button" TargetType="Button">
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Background" Value="#00000000" />

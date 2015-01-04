@@ -37,7 +37,7 @@ namespace nmct.project.ui.medewerker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("rm")]
+        [global::System.Configuration.DefaultSettingValueAttribute("kvk")]
         public string DbLogin {
             get {
                 return ((string)(this["DbLogin"]));
@@ -56,6 +56,18 @@ namespace nmct.project.ui.medewerker.Properties {
             }
             set {
                 this["DbPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string RegisterID {
+            get {
+                return ((string)(this["RegisterID"]));
+            }
+            set {
+                this["RegisterID"] = value;
             }
         }
     }

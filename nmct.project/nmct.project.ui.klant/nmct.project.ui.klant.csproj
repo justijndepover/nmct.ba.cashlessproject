@@ -93,9 +93,13 @@
     <Compile Include="ViewModel\ApplicationVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MainscreenVM.cs" />
+    <Compile Include="ViewModel\OpladenVM.cs" />
     <Compile Include="ViewModel\RegistrerenVM.cs" />
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Opladen.xaml.cs">
+      <DependentUpon>Opladen.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Registreren.xaml.cs">
       <DependentUpon>Registreren.xaml</DependentUpon>
@@ -122,6 +126,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Opladen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,10 +173,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\terug.png" />
+    <Resource Include="images\noimage.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\noimage.png" />
+    <Resource Include="images\terug.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

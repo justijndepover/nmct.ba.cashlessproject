@@ -12,15 +12,16 @@
     <Grid Width="400" Height="200">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="35" />
             <RowDefinition Height="45" />
             <RowDefinition Height="45" />
         </Grid.RowDefinitions>
-        <Button Content="Aanmelden" Grid.Row="1" Style="{StaticResource button_Style}" Command="{Binding LoginCommand}"/>
-        <Button Content="Registreren" Grid.Column="1" Grid.Row="1" Style="{StaticResource button_Style}" Command="{Binding RegisterCommand}"/>
-        <TextBlock Text="{Binding Error}" Grid.ColumnSpan="2" Grid.Row="2"/>
+        <TextBlock Text="Welkom Klant" Style="{StaticResource login_titel}"/>
+        <TextBlock Text="Steek uw EID in de reader en klik op aanmelden" Grid.Row="1" Style="{StaticResource login_subtitel}"/>
+        <Button Content="Aanmelden" Grid.Row="2" Style="{StaticResource button_Style}" Command="{Binding LoginCommand}"/>
+        <TextBlock Text="{Binding Error}" Grid.ColumnSpan="2" Grid.Row="3" Style="{StaticResource error_message}"/>
     </Grid>
 </UserControl>

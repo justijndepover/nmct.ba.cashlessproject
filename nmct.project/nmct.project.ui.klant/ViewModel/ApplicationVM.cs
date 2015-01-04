@@ -19,6 +19,7 @@ namespace nmct.project.ui.klant.ViewModel
             Pages.Add(new LoginVM());
             Pages.Add(new RegistrerenVM());
             Pages.Add(new MainscreenVM());
+            Pages.Add(new OpladenVM());
 
             CurrentPage = Pages[0];
         }
@@ -66,6 +67,15 @@ namespace nmct.project.ui.klant.ViewModel
             get { return _activeUser; }
             set { _activeUser = value; }
         }
+
+        private static Customer _tempUser;
+
+        public static Customer TempUser
+        {
+            get { return _tempUser; }
+            set { _tempUser = value; }
+        }
+        
 
         public static TokenResponse Token { get; set; }
 

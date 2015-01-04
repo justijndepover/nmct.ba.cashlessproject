@@ -58,13 +58,27 @@ namespace nmct.project.management.ui.ViewModel
 
             if (!ApplicationVM.token.IsError)
             {
-                ApplicationVM.CurrentUser = Username;
+                GetOrganisation();
                 appvm.ChangePage(new MainscreenVM());
             }
             else
             {
                 Error = "Gebruikersnaam of paswoord kloppen niet";
-                ApplicationVM.CurrentUser = "";
+                ApplicationVM.CurrentOrganisation = null;
+            }
+        }
+
+        private async void GetOrganisation()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.SetBearerToken(ApplicationVM.token.AccessToken);
+                HttpResponseMessage response = await client.GetAsync("http://localhost:3655/api/organisation/?username=" + Username);
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    ApplicationVM.CurrentOrganisation = JsonConvert.DeserializeObject<Organisations>(json);
+                }
             }
         }
 

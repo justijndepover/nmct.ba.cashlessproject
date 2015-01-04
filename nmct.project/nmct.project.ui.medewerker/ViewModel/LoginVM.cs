@@ -73,7 +73,7 @@ namespace nmct.project.ui.medewerker.ViewModel
                 {
                     ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
                     ApplicationVM.ActiveEmployee = JsonConvert.DeserializeObject<Employee>(json);
-
+                    ApplicationVM.From = DateTime.Now;
                     appvm.ChangePage(new TussenpaginaVM());
                 }
                 else
@@ -82,5 +82,6 @@ namespace nmct.project.ui.medewerker.ViewModel
                 }
             }
         }
+
     }
 }

@@ -20,15 +20,17 @@ namespace nmct.project.api.Controllers
         }
 
         [HttpGet]
-        public String Get(string username)
+        public Organisations Get(string username)
         {
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
-            return AdminDA.GetOrganisation(username, p.Claims).OrganisationName;
+            return AdminDA.GetOrganisation(username, p.Claims);
         }
 
-        public void ChangePassword(string password)
+        public HttpResponseMessage Post(Organisations o)
         {
-
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            OrganisationsDA.ChangePassword(o.Password, o.Login);
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

@@ -25,7 +25,7 @@
             <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
         <Rectangle Height="150" Grid.ColumnSpan="3" Fill="{StaticResource blauw}" Grid.RowSpan="2"/>
-        <Button Style="{StaticResource mainscreen_logout}" Grid.Column="2" Command="{Binding DataContext.ChangePageCommand,  RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[1], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">Klant Uitloggen</Button>
+        <Button Style="{StaticResource mainscreen_logout}" Grid.Column="2" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[2], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">Klant Uitloggen</Button>
         <TextBlock Style="{StaticResource mainscreen_title}" Text="{Binding Name}"/>
         <TextBlock Style="{StaticResource mainscreen_subtitle}" Grid.Row="1" Text="{Binding DataContext.ActiveEmployee.EmployeeName, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
         <ScrollViewer Grid.Row="2" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" Margin="10">
@@ -37,7 +37,7 @@
             <ItemsControl ItemsSource="{Binding SelectedProducts}" ItemTemplate="{StaticResource product_list_template}" />
         </ScrollViewer>
         <TextBlock Text="{Binding TotalCost, Converter={StaticResource PrijsConverter}}" Grid.Column="1" Grid.Row="4" Style="{StaticResource login_subtitel}"/>
-        <Button Content="Bestelling afronden" Grid.Column="1" Grid.Row="5" Style="{StaticResource button_Style}"/>
+        <Button Content="Bestelling afronden" Grid.Column="1" Grid.Row="5" Style="{StaticResource button_Style}" Command="{Binding BestellingCommand}"/>
         <TextBlock Text="{Binding Error}" Grid.Column="1" Grid.Row="6" Style="{StaticResource error_message}"/>
         <TextBlock Text="Klant" Grid.Column="2" Grid.Row="2" Style="{StaticResource bestelling_style}"/>
         <Grid Grid.Row="3" Grid.Column="2" Grid.RowSpan="4">
@@ -52,7 +52,7 @@
             <TextBlock Text="Naam" Style="{StaticResource customer_info}" Grid.Row="1"/>
             <TextBlock Text="{Binding DataContext.ActiveCustomer.CustomerName, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"  Style="{StaticResource customer_info_bold}" Grid.Row="2"/>
             <TextBlock Text="Huidig Saldo" Style="{StaticResource customer_info}" Grid.Row="3"/>
-            <TextBlock Text="{Binding DataContext.ActiveCustomer.Balance, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Style="{StaticResource customer_info_bold}" Grid.Row="4"/>
+            <TextBlock Text="{Binding DataContext.ActiveCustomer.Balance, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Converter={StaticResource EuroConverter}}" Style="{StaticResource customer_info_bold}" Grid.Row="4"/>
         </Grid>
     </Grid>
 </UserControl>

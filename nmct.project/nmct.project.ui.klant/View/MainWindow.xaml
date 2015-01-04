@@ -17,6 +17,9 @@
         <DataTemplate DataType="{x:Type vm:RegistrerenVM}">
             <v:Registreren/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OpladenVM}">
+            <v:Opladen/>
+        </DataTemplate>
     </Window.Resources>
     <Grid Style="{StaticResource mainwindow_grid}">
         <!-- 

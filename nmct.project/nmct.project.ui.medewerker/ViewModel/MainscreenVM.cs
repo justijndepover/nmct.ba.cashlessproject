@@ -176,18 +176,37 @@ namespace nmct.project.ui.medewerker.ViewModel
 
         public ICommand BestellingCommand
         {
-            get { return new RelayCommand(BestellingAfronden); }
+            get { return new RelayCommand(SaveSales); }
         }
 
-        private async void BestellingAfronden()
-        {
-            string input = JsonConvert.SerializeObject(TotalCost);
 
+        private async void SaveSales()
+        {
+            ProductList p = new ProductList();
+            double verschil = ApplicationVM.ActiveCustomer.Balance - TotalCost;
+            p.CustomerTransaction = new CustomerTransaction() { RijksregisterNummer = ApplicationVM.ActiveCustomer.RijksregisterNummer, VerschilBedrag = verschil };
+            p.Products = SelectedProducts;
+            p.CustomerID = ApplicationVM.ActiveCustomer.ID;
+            p.RegisterID = int.Parse(Properties.Settings.Default.RegisterID);
+            p.TimeStamp = DateTime.Now;
+            string input = JsonConvert.SerializeObject(p);
             using (HttpClient client = new HttpClient())
             {
                 client.SetBearerToken(ApplicationVM.Token.AccessToken);
-                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/customer/lowerbalance", new StringContent(input, Encoding.UTF8, "application/json"));
+                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/sales", new StringContent(input, Encoding.UTF8, "application/json"));
+                if (response.IsSuccessStatusCode)
+                {
+                    ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
+                    ApplicationVM.ActiveCustomer = new Customer();
+                    appvm.ChangePage(new TussenpaginaVM());
+                }
+                else
+                {
+                    Error = "Transactie mislukt";
+                }
             }
         }
+
+        
     }
 }

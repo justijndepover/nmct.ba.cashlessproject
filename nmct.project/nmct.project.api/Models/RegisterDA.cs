@@ -44,5 +44,29 @@ namespace nmct.project.api.Models
                 Device = record["Device"].ToString()
             };
         }
+
+        public static List<RegisterEmployee> GetEmployeesOnRegister(int registerID, IEnumerable<Claim> claims)
+        {
+            List<RegisterEmployee> list = new List<RegisterEmployee>();
+            string sql = "SELECT EmployeeName, FromTime, UntilTime FROM Register_Employee INNER JOIN Employee ON Register_Employee.EmployeeID = Employee.ID WHERE RegisterID=@registerid";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@registerid", registerID);
+            DbDataReader reader = Database.GetData(Database.GetConnection(CreateConnectionString(claims)), sql, par1);
+            while (reader.Read())
+            {
+                list.Add(CreateRegisterEmployee(reader));
+            }
+            reader.Close();
+            return list;
+        }
+
+        private static RegisterEmployee CreateRegisterEmployee(IDataRecord record)
+        {
+            return new RegisterEmployee()
+            {
+                EmployeeName = record["EmployeeName"].ToString(),
+                From = DateTime.Parse(record["FromTime"].ToString()),
+                Until = DateTime.Parse(record["UntilTime"].ToString())
+            };
+        }
     }
 }

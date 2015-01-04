@@ -17,5 +17,18 @@ namespace nmct.project.api.Controllers
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
             return RegisterDA.GetRegisters(p.Claims);
         }
+
+        public List<RegisterEmployee> Get(int id)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            return RegisterDA.GetEmployeesOnRegister(id, p.Claims);
+        }
+
+        public HttpResponseMessage Post(RegisterEmployee re)
+        {
+            ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
+            EmployeeDA.LogEmployee(re, p.Claims);
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
     }
 }

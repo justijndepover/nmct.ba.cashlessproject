@@ -84,5 +84,26 @@ namespace nmct.project.ui.medewerker.ViewModel
                 }
             }
         }
+
+        public ICommand UitloggenCommand
+        {
+            get { return new RelayCommand(MedewerkerLoggen); }
+        }
+
+        private async void MedewerkerLoggen()
+        {
+            RegisterEmployee re = new RegisterEmployee() { RegisterID = int.Parse(Properties.Settings.Default.RegisterID), EmployeeID = ApplicationVM.ActiveEmployee.ID, From = ApplicationVM.From, Until = DateTime.Now };
+            string input = JsonConvert.SerializeObject(re);
+            using (HttpClient client = new HttpClient())
+            {
+                client.SetBearerToken(ApplicationVM.Token.AccessToken);
+                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/register/", new StringContent(input, Encoding.UTF8, "application/json"));
+                if (response.IsSuccessStatusCode)
+                {
+                    ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
+                    appvm.ChangePage(new LoginVM());
+                }
+            }
+        }
     }
 }

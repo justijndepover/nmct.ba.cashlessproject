@@ -46,7 +46,15 @@ namespace nmct.project.ui.klant.ViewModel
                         {
                             Customer c = new Customer();
                             BEID_EIDCard card = readerContext.getEIDCard();
+                            BEID_Picture picture;
+                            picture = card.getPicture();
+                            byte[] bytearray = picture.getData().GetBytes();
+                            c.CustomerName = card.getID().getFirstName() + " " + card.getID().getSurname();
+                            c.Address = card.getID().getStreet() + " " + card.getID().getZipCode() + " " + card.getID().getMunicipality();
+                            c.Picture = bytearray;
                             c.RijksregisterNummer = long.Parse(card.getID().getNationalNumber());
+                            c.Balance = 0;
+                            ApplicationVM.TempUser = c;
                             ControleerGebruiker(c);
                         }
                     }
@@ -63,40 +71,6 @@ namespace nmct.project.ui.klant.ViewModel
             }
         }
 
-        public ICommand RegisterCommand
-        {
-            get { return new RelayCommand(Register); }
-        }
-
-        private void Register()
-        {
-            BEID_ReaderSet.initSDK();
-            if (BEID_ReaderSet.instance().readerCount() > 0)
-            {
-                BEID_ReaderContext readerContext = readerContext = BEID_ReaderSet.instance().getReader();
-                if (readerContext != null)
-                {
-                    if (readerContext.getCardType() == BEID_CardType.BEID_CARDTYPE_EID)
-                    {
-                        BEID_EIDCard card = readerContext.getEIDCard();
-                        BEID_Picture picture;
-                        picture = card.getPicture();
-                        byte[] bytearray = picture.getData().GetBytes();
-                        ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
-                        Customer c = new Customer();
-                        ApplicationVM.ActiveUser = c;
-                        ApplicationVM.ActiveUser.CustomerName = card.getID().getFirstName() + " " + card.getID().getSurname();
-                        ApplicationVM.ActiveUser.Address = card.getID().getStreet() + " " + card.getID().getZipCode() + " " + card.getID().getMunicipality();
-                        ApplicationVM.ActiveUser.Picture = bytearray;
-                        ApplicationVM.ActiveUser.RijksregisterNummer = long.Parse(card.getID().getNationalNumber());
-                        ApplicationVM.ActiveUser.Balance = 0;
-
-                        appvm.ChangePage(new RegistrerenVM());
-                    }
-                }
-            }
-            BEID_ReaderSet.releaseSDK();
-        }
 
         private async void ControleerGebruiker(Customer c)
         {
@@ -105,16 +79,17 @@ namespace nmct.project.ui.klant.ViewModel
                 client.SetBearerToken(ApplicationVM.Token.AccessToken);
                 HttpResponseMessage response = await client.GetAsync("http://localhost:3655/Api/Customer/?nummer=" + c.RijksregisterNummer);
                 string json = await response.Content.ReadAsStringAsync();
+                ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
                 if (json != "null")
                 {
-                    ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
+                    
                     ApplicationVM.ActiveUser = JsonConvert.DeserializeObject<Customer>(json);
 
                     appvm.ChangePage(new MainscreenVM());
                 }
                 else
                 {
-                    Error = "De gebruiker is niet gevonden.";
+                    appvm.ChangePage(new RegistrerenVM());
                 }
             }
         }

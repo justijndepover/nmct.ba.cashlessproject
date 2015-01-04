@@ -21,9 +21,21 @@
                 <TextBlock Style="{StaticResource mainscreen_title}" Text="{Binding Name}"/>
             </StackPanel>
         </Button>
-
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <ItemsControl ItemsSource="{Binding AllKassas, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource register_template}"/>
-        </ScrollViewer>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" /> 
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding AllKassas, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource register_template}"/>
+            </ScrollViewer>
+            <Grid Grid.Column="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding RegisterEmployee, UpdateSourceTrigger=PropertyChanged}"/>
+                </ScrollViewer>
+            </Grid>   
+        </Grid>
+        
     </Grid>
 </UserControl>

@@ -46,9 +46,12 @@
     <Compile Include="dbAdmin\Errorlog.cs" />
     <Compile Include="dbAdmin\Organisations.cs" />
     <Compile Include="dbKlant\Customer.cs" />
+    <Compile Include="dbKlant\CustomerTransaction.cs" />
     <Compile Include="dbKlant\Employee.cs" />
     <Compile Include="dbKlant\Errorlog.cs" />
+    <Compile Include="dbKlant\ProductList.cs" />
     <Compile Include="dbKlant\Products.cs" />
+    <Compile Include="dbKlant\RegisterEmployee.cs" />
     <Compile Include="dbKlant\Registers.cs" />
     <Compile Include="dbKlant\Sales.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
