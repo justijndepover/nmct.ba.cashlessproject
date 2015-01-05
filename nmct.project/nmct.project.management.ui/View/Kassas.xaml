@@ -32,7 +32,7 @@
             </ScrollViewer>
             <Grid Grid.Column="1">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding RegisterEmployee, UpdateSourceTrigger=PropertyChanged}"/>
+                    <ItemsControl ItemsSource="{Binding RegisterEmployee, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource employee_on_register}"/>
                 </ScrollViewer>
             </Grid>   
         </Grid>

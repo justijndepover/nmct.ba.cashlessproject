@@ -86,6 +86,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converter\EditConverter.cs" />
+    <Compile Include="Converter\Register2Converter.cs" />
+    <Compile Include="Converter\RegisterConverter.cs" />
+    <Compile Include="Converter\StringToImageConverter.cs" />
     <Compile Include="Helper\Cryptography.cs" />
     <Compile Include="ViewModel\ApplicationVM.cs" />
     <Compile Include="ViewModel\KassasVM.cs" />

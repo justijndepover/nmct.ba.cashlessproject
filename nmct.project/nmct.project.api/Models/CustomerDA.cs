@@ -68,6 +68,19 @@ namespace nmct.project.api.Models
             Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4, par5);
         }
 
+        public static void UpdateCustomer(Customer c, IEnumerable<Claim> claims)
+        {
+            string sql = "UPDATE Customer SET CustomerName=@CustomerName, Address=@Address, Picture=@Picture, Balance=@Balance, RijksID=@RijksID WHERE ID=@id";
+            DbParameter par1 = Database.AddParameter("ConnectionString", "@CustomerName", c.CustomerName);
+            DbParameter par2 = Database.AddParameter("ConnectionString", "@Address", c.Address);
+            DbParameter par3 = Database.AddParameter("ConnectionString", "@Picture", c.Picture);
+            DbParameter par4 = Database.AddParameter("ConnectionString", "@Balance", c.Balance);
+            DbParameter par5 = Database.AddParameter("ConnectionString", "@RijksID", c.RijksregisterNummer);
+            DbParameter par6 = Database.AddParameter("ConnectionString", "@id", c.ID);
+
+            Database.InsertData(Database.GetConnection(CreateConnectionString(claims)), sql, par1, par2, par3, par4, par5,par6);
+        }
+
         public static List<Customer> GetCustomers(IEnumerable<Claim> claims)
         {
             List<Customer> list = new List<Customer>();

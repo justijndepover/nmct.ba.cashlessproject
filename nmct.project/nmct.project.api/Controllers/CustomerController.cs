@@ -31,10 +31,10 @@ namespace nmct.project.api.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        public HttpResponseMessage Post(CustomerTransaction ct)
+        public HttpResponseMessage Post(Customer c)
         {
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
-            CustomerDA.LowerBalance(ct.VerschilBedrag, ct.RijksregisterNummer, p.Claims);
+            CustomerDA.UpdateCustomer(c, p.Claims);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }

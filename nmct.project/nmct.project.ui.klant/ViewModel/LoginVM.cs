@@ -62,12 +62,14 @@ namespace nmct.project.ui.klant.ViewModel
                 else
                 {
                     Error = "Plaats een geldige kaart in het toestel";
+                    CreateErrorlog(Error, "LoginVM", "Login");
                 }
                 BEID_ReaderSet.releaseSDK();
             }
             catch (Exception ex)
             {
                 Error = "Plaats een geldige kaart in het toestel";
+                CreateErrorlog(Error, "LoginVM", "Login");
             }
         }
 
@@ -91,6 +93,18 @@ namespace nmct.project.ui.klant.ViewModel
                 {
                     appvm.ChangePage(new RegistrerenVM());
                 }
+            }
+        }
+        private async void CreateErrorlog(string errorMessage, string errorClass, string errorMethod)
+        {
+            Errorlog errorlog = new Errorlog();
+            errorlog.Message = errorMessage;
+            errorlog.Stacktrace = "KLANT: ErrorClass:" + errorClass + " ErrorMethod: " + errorMethod;
+            errorlog.Timestamp = DateTime.Now;
+            using (HttpClient client = new HttpClient())
+            {
+                string input = JsonConvert.SerializeObject(errorlog);
+                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/error", new StringContent(input, Encoding.UTF8, "application/json"));
             }
         }
     }

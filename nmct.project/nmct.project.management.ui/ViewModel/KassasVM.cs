@@ -33,16 +33,7 @@ namespace nmct.project.management.ui.ViewModel
             get { return _allKassas; }
             set { _allKassas = value; OnPropertyChanged("AllKassas"); }
         }
-
-        private Registers _selectedKassa;
-
-        public Registers SelectedKassa
-        {
-            get { return _selectedKassa; }
-            set { _selectedKassa = value; OnPropertyChanged("SelectedKassa"); }
-        }
         
-
         public async void GetRegisters()
         {
             using (HttpClient client = new HttpClient())

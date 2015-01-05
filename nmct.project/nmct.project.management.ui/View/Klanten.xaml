@@ -14,6 +14,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
         <Button Grid.Column="0" Style="{StaticResource title_button}" Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding DataContext.Pages[1], RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <StackPanel Orientation="Horizontal">
                 <Image Style="{StaticResource itemscreen_back_image}" Source="/images/terug.png" />
@@ -21,9 +22,39 @@
             </StackPanel>
         </Button>
 
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <ItemsControl ItemsSource="{Binding AllCustomers}" />
-        </ScrollViewer>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding AllCustomers, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource customer_template}"/>
+            </ScrollViewer>
+            <Grid Grid.Column="1" Background="{StaticResource grijs}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image Source="{Binding SelectedCustomer.Picture, Converter={StaticResource ImageConverter}}" Style="{StaticResource customer_image}" />
+                <TextBlock Text="Naam" Style="{StaticResource customer_info_text_bold}" Grid.Row="1"/>
+                <TextBox Text="{Binding SelectedCustomer.CustomerName, Mode=TwoWay}" Grid.Row="2" Style="{StaticResource textbox_Style}"/>
+                <TextBlock Text="Adres" Style="{StaticResource customer_info_text_bold}" Grid.Row="3"/>
+                <TextBox Text="{Binding SelectedCustomer.Address, Mode=TwoWay}" Grid.Row="4" Style="{StaticResource textbox_Style}"/>
+                <TextBlock Text="Bedrag op rekening" Style="{StaticResource customer_info_text_bold}" Grid.Row="5"/>
+                <TextBox Text="{Binding SelectedCustomer.Balance, Mode=TwoWay}" Grid.Row="6" Style="{StaticResource textbox_Style}"/>
+                <TextBlock Text="Rijksregisternummer" Style="{StaticResource customer_info_text_bold}" Grid.Row="7"/>
+                <TextBox Text="{Binding SelectedCustomer.RijksregisterNummer, Mode=TwoWay}" Grid.Row="8" Style="{StaticResource textbox_Style}"/>
+                <Button Content="Sla klant op" Style="{StaticResource button_Style}" Command="{Binding SaveCustomerCommand}" Grid.Row="9"/>
+            </Grid>
+        </Grid>
 
     </Grid>
 </UserControl>

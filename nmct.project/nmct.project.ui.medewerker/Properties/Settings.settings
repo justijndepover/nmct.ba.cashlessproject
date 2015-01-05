@@ -6,7 +6,7 @@
       <Value Profile="(Default)">RealMadrid</Value>
     </Setting>
     <Setting Name="DbLogin" Type="System.String" Scope="User">
-      <Value Profile="(Default)">kvk</Value>
+      <Value Profile="(Default)">rm</Value>
     </Setting>
     <Setting Name="DbPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)">admin</Value>

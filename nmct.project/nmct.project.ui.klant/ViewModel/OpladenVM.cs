@@ -62,7 +62,7 @@ namespace nmct.project.ui.klant.ViewModel
             using (HttpClient client = new HttpClient())
             {
                 client.SetBearerToken(ApplicationVM.Token.AccessToken);
-                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/customer/", new StringContent(input, Encoding.UTF8, "application/json"));
+                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/customertransaction/", new StringContent(input, Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
                     ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
@@ -72,7 +72,21 @@ namespace nmct.project.ui.klant.ViewModel
                 else
                 {
                     Error = "Transactie mislukt";
+                    CreateErrorlog(Error, "OpladenVM", "PostValue");
                 }
+            }
+        }
+
+        private async void CreateErrorlog(string errorMessage, string errorClass, string errorMethod)
+        {
+            Errorlog errorlog = new Errorlog();
+            errorlog.Message = errorMessage;
+            errorlog.Stacktrace = "KLANT: ErrorClass:" + errorClass + " ErrorMethod: " + errorMethod;
+            errorlog.Timestamp = DateTime.Now;
+            using (HttpClient client = new HttpClient())
+            {
+                string input = JsonConvert.SerializeObject(errorlog);
+                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/error", new StringContent(input, Encoding.UTF8, "application/json"));
             }
         }
     }

@@ -80,6 +80,7 @@ namespace nmct.project.ui.medewerker.ViewModel
             if (TotalCost > ApplicationVM.ActiveCustomer.Balance)
             {
                 Error = "De rekening is te groot";
+                CreateErrorlog(Error, "MainscreenVM", "CheckBalance");
             }
             else
             {
@@ -127,12 +128,14 @@ namespace nmct.project.ui.medewerker.ViewModel
                 else
                 {
                     Error = "Plaats een geldige kaart in het toestel";
+                    CreateErrorlog(Error, "MainscreenVM", "ScanCustomer");
                 }
                 BEID_ReaderSet.releaseSDK();
             }
             catch (Exception ex)
             {
                 Error = "Plaats een geldige kaart in het toestel";
+                CreateErrorlog(Error, "MainscreenVM", "ScanCustomer");
             }
         }
 
@@ -153,6 +156,7 @@ namespace nmct.project.ui.medewerker.ViewModel
                 else
                 {
                     Error = "De gebruiker is niet gevonden.";
+                    CreateErrorlog(Error, "MainscreenVM", "ControleerGebruiker");
                 }
             }
         }
@@ -203,10 +207,24 @@ namespace nmct.project.ui.medewerker.ViewModel
                 else
                 {
                     Error = "Transactie mislukt";
+                    CreateErrorlog(Error, "MainscreenVM", "SaveSales");
                 }
             }
+
         }
 
-        
+        private async void CreateErrorlog(string errorMessage, string errorClass, string errorMethod)
+        {
+            Errorlog errorlog = new Errorlog();
+            errorlog.Message = errorMessage;
+            errorlog.RegisterID = int.Parse(Properties.Settings.Default.RegisterID);
+            errorlog.Stacktrace = "MEDEWERKER: ErrorClass:" + errorClass + " ErrorMethod: " + errorMethod;
+            errorlog.Timestamp = DateTime.Now;
+            using (HttpClient client = new HttpClient())
+            {
+                string input = JsonConvert.SerializeObject(errorlog);
+                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/error", new StringContent(input, Encoding.UTF8, "application/json"));
+            }
+        }
     }
 }

@@ -55,12 +55,14 @@ namespace nmct.project.ui.medewerker.ViewModel
                 else
                 {
                     Error = "Gelieve een geregistreerde klanten ID in de reader te plaatsen";
+                    CreateErrorlog(Error, "TussenpaginaVM", "Login");
                 }
                 BEID_ReaderSet.releaseSDK();
             }
             catch (Exception ex)
             {
                 Error = "Gelieve een geregistreerde klanten ID in de reader te plaatsen";
+                CreateErrorlog(Error, "TussenpaginaVM", "Login");
             }
         }
 
@@ -81,6 +83,7 @@ namespace nmct.project.ui.medewerker.ViewModel
                 else
                 {
                     Error = "Gelieve een geregistreerde klanten ID in de reader te plaatsen";
+                    CreateErrorlog(Error, "TussenpaginaVM", "ControleerGebruiker");
                 }
             }
         }
@@ -103,6 +106,20 @@ namespace nmct.project.ui.medewerker.ViewModel
                     ApplicationVM appvm = App.Current.MainWindow.DataContext as ApplicationVM;
                     appvm.ChangePage(new LoginVM());
                 }
+            }
+        }
+
+        private async void CreateErrorlog(string errorMessage, string errorClass, string errorMethod)
+        {
+            Errorlog errorlog = new Errorlog();
+            errorlog.Message = errorMessage;
+            errorlog.RegisterID = int.Parse(Properties.Settings.Default.RegisterID);
+            errorlog.Stacktrace = "MEDEWERKER: ErrorClass:" + errorClass + " ErrorMethod: " + errorMethod;
+            errorlog.Timestamp = DateTime.Now;
+            using (HttpClient client = new HttpClient())
+            {
+                string input = JsonConvert.SerializeObject(errorlog);
+                HttpResponseMessage response = await client.PostAsync("http://localhost:3655/api/error", new StringContent(input, Encoding.UTF8, "application/json"));
             }
         }
     }
