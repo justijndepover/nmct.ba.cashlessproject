@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganisationsController.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="Helper\Cryptography.cs" />
     <Compile Include="Helper\Database.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ErrorDA.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrganisationDA.cs" />
@@ -310,6 +312,7 @@
     <Content Include="Views\Registers\Index.cshtml" />
     <Content Include="Views\Registers\EditOrganisation.cshtml" />
     <Content Include="Views\Registers\Search.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

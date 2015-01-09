@@ -16,6 +16,7 @@ namespace nmct.project.api.Controllers
         {
             ClaimsPrincipal p = RequestContext.Principal as ClaimsPrincipal;
             ErrorDA.CreateErrorlog(errorlog, p.Claims);
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

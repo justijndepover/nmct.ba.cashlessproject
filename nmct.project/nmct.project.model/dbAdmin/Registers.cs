@@ -20,7 +20,7 @@ namespace nmct.project.model
         }
 
         private string _registerName;
-        [Required]
+        [Required(ErrorMessage = "Een naam voor de kassa is verplicht")]
         [DisplayName("Kassanaam")]
         public string RegisterName
         {
@@ -29,7 +29,7 @@ namespace nmct.project.model
         }
 
         private string _device;
-        [Required]
+        [Required(ErrorMessage = "Een toestelnaam is verplicht")]
         [DisplayName("Toestel")]
         public string Device
         {
@@ -39,7 +39,7 @@ namespace nmct.project.model
 
         
         private DateTime _purchaseDate;
-        [Required]
+        [Required(ErrorMessage = "Een aankoopdatum is verplicht")]
         [DisplayName("Aankoopdatum")]
         [DataType(DataType.Date)]
         public DateTime PurchaseDate
@@ -50,7 +50,7 @@ namespace nmct.project.model
 
 
         private DateTime _expiresDate;
-        [Required]
+        [Required(ErrorMessage = "Een vervaldatum is verplicht")]
         [DisplayName("Vervaldatum")]
         [DataType(DataType.Date)]
         public DateTime ExpiresDate

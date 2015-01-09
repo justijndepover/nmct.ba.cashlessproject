@@ -20,8 +20,9 @@ namespace nmct.project.model
         }
 
         private string _login;
-        [Required]
+        [Required(ErrorMessage="Een loginnaam is verplicht")]
         [DisplayName("Login")]
+        [MinLength(2, ErrorMessage="De naam moet minimum 2 letters bevatten")]
         public string Login
         {
             get { return _login; }
@@ -29,8 +30,9 @@ namespace nmct.project.model
         }
         
         private string _password;
-        [Required]
+        [Required(ErrorMessage = "Een wachtwoord is verplicht")]
         [DisplayName("Wachtwoord")]
+        [MinLength(5, ErrorMessage = "Het wachtwoord moet minimum 5 karakters bevatten")]
         public string Password
         {
             get { return _password; }
@@ -38,8 +40,9 @@ namespace nmct.project.model
         }
 
         private string _dbName;
-        [Required]
+        [Required(ErrorMessage = "Een databasenaam is verplicht")]
         [DisplayName("Naam van de database")]
+        [MinLength(2, ErrorMessage = "De naam moet minimum 2 letters bevatten")]
         public string DbName
         {
             get { return _dbName; }
@@ -47,8 +50,9 @@ namespace nmct.project.model
         }
         
         private string _dbPassword;
-        [Required]
+        [Required(ErrorMessage = "Een wachtwoord is verplicht")]
         [DisplayName("Database wachtwoord")]
+        [MinLength(2, ErrorMessage = "Het wachtwoord moet minimum 5 karakters bevatten")]
         public string DbPassword
         {
             get { return _dbPassword; }
@@ -56,8 +60,9 @@ namespace nmct.project.model
         }
 
         private string _dbLogin;
-        [Required]
+        [Required(ErrorMessage = "Een loginnaam is verplicht")]
         [DisplayName("Database login")]
+        [MinLength(2, ErrorMessage = "De naam moet minimum 2 letters bevatten")]
         public string DbLogin
         {
             get { return _dbLogin; }
@@ -65,8 +70,9 @@ namespace nmct.project.model
         }
         
         private string _organisationName;
-        [Required]
+        [Required(ErrorMessage = "Een organisatienaam is verplicht")]
         [DisplayName("Organisatie")]
+        [MinLength(2, ErrorMessage = "De naam moet minimum 2 letters bevatten")]
         public string OrganisationName
         {
             get { return _organisationName; }
@@ -74,7 +80,7 @@ namespace nmct.project.model
         }
         
         private string _address;
-        [Required]
+        [Required(ErrorMessage = "Een adres is verplicht")]
         [DisplayName("Adres")]
         public string Address
         {
@@ -83,8 +89,9 @@ namespace nmct.project.model
         }
         
         private string _email;
-        [Required]
+        [Required(ErrorMessage = "Een emailadres is verplicht")]
         [DisplayName("Emailadres")]
+        [DataType(DataType.EmailAddress)]
         public string Email
         {
             get { return _email; }
@@ -92,7 +99,7 @@ namespace nmct.project.model
         }
         
         private string _phone;
-        [Required]
+        [Required(ErrorMessage = "Een telefoonnummer is verplicht")]
         [DisplayName("Telefoonnummer")]
         public string Phone
         {

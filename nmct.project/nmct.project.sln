@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nmct.project.ui.klant", "nm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nmct.project.web.itbedrijf", "nmct.project.web.itbedrijf\nmct.project.web.itbedrijf.csproj", "{6BC88E83-04E1-4E2D-9AE5-A4F53C9E0A3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateAdminDB", "UpdateAdminDB\UpdateAdminDB.csproj", "{66E4E7D6-F8D7-42E0-AE4E-260FC59BA035}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6BC88E83-04E1-4E2D-9AE5-A4F53C9E0A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BC88E83-04E1-4E2D-9AE5-A4F53C9E0A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BC88E83-04E1-4E2D-9AE5-A4F53C9E0A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E4E7D6-F8D7-42E0-AE4E-260FC59BA035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E4E7D6-F8D7-42E0-AE4E-260FC59BA035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E4E7D6-F8D7-42E0-AE4E-260FC59BA035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E4E7D6-F8D7-42E0-AE4E-260FC59BA035}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
